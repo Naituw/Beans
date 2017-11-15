@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C66653C41FBC9F600009F30C /* BeansGenerator.m in Sources */ = {isa = PBXBuildFile; fileRef = C66653C31FBC9F600009F30C /* BeansGenerator.m */; };
+		C66653C71FBC9FC20009F30C /* BeanView.m in Sources */ = {isa = PBXBuildFile; fileRef = C66653C61FBC9FC20009F30C /* BeanView.m */; };
+		C66653CA1FBCA14C0009F30C /* BeanNormalBeanView.m in Sources */ = {isa = PBXBuildFile; fileRef = C66653C91FBCA14C0009F30C /* BeanNormalBeanView.m */; };
+		C66653CD1FBCA1580009F30C /* BeanLargeBeanView.m in Sources */ = {isa = PBXBuildFile; fileRef = C66653CC1FBCA1580009F30C /* BeanLargeBeanView.m */; };
+		C66653D01FBCA1870009F30C /* BeanPooPooView.m in Sources */ = {isa = PBXBuildFile; fileRef = C66653CF1FBCA1870009F30C /* BeanPooPooView.m */; };
 		C68123661FBC5A18002D6C23 /* BeanGamePhase.m in Sources */ = {isa = PBXBuildFile; fileRef = C68123651FBC5A18002D6C23 /* BeanGamePhase.m */; };
 		C68123691FBC5A2A002D6C23 /* BeanGamePhaseController.m in Sources */ = {isa = PBXBuildFile; fileRef = C68123681FBC5A2A002D6C23 /* BeanGamePhaseController.m */; };
 		C681236C1FBC5A3B002D6C23 /* BeanGameCountdownPhase.m in Sources */ = {isa = PBXBuildFile; fileRef = C681236B1FBC5A3B002D6C23 /* BeanGameCountdownPhase.m */; };
@@ -22,6 +27,17 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		C66653C21FBC9F600009F30C /* BeansGenerator.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BeansGenerator.h; sourceTree = "<group>"; };
+		C66653C31FBC9F600009F30C /* BeansGenerator.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BeansGenerator.m; sourceTree = "<group>"; };
+		C66653C51FBC9FC20009F30C /* BeanView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BeanView.h; sourceTree = "<group>"; };
+		C66653C61FBC9FC20009F30C /* BeanView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BeanView.m; sourceTree = "<group>"; };
+		C66653C81FBCA14C0009F30C /* BeanNormalBeanView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BeanNormalBeanView.h; sourceTree = "<group>"; };
+		C66653C91FBCA14C0009F30C /* BeanNormalBeanView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BeanNormalBeanView.m; sourceTree = "<group>"; };
+		C66653CB1FBCA1580009F30C /* BeanLargeBeanView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BeanLargeBeanView.h; sourceTree = "<group>"; };
+		C66653CC1FBCA1580009F30C /* BeanLargeBeanView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BeanLargeBeanView.m; sourceTree = "<group>"; };
+		C66653CE1FBCA1870009F30C /* BeanPooPooView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BeanPooPooView.h; sourceTree = "<group>"; };
+		C66653CF1FBCA1870009F30C /* BeanPooPooView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BeanPooPooView.m; sourceTree = "<group>"; };
+		C66653D11FBCA7720009F30C /* BeanView+SubClass.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "BeanView+SubClass.h"; sourceTree = "<group>"; };
 		C68123641FBC5A18002D6C23 /* BeanGamePhase.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BeanGamePhase.h; sourceTree = "<group>"; };
 		C68123651FBC5A18002D6C23 /* BeanGamePhase.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BeanGamePhase.m; sourceTree = "<group>"; };
 		C68123671FBC5A2A002D6C23 /* BeanGamePhaseController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BeanGamePhaseController.h; sourceTree = "<group>"; };
@@ -96,6 +112,17 @@
 				C681236E1FBC5A4F002D6C23 /* BeanGamePlayingPhase.m */,
 				C68123701FBC5A86002D6C23 /* BeanGameResultPhase.h */,
 				C68123711FBC5A86002D6C23 /* BeanGameResultPhase.m */,
+				C66653C21FBC9F600009F30C /* BeansGenerator.h */,
+				C66653C31FBC9F600009F30C /* BeansGenerator.m */,
+				C66653C51FBC9FC20009F30C /* BeanView.h */,
+				C66653C61FBC9FC20009F30C /* BeanView.m */,
+				C66653D11FBCA7720009F30C /* BeanView+SubClass.h */,
+				C66653C81FBCA14C0009F30C /* BeanNormalBeanView.h */,
+				C66653C91FBCA14C0009F30C /* BeanNormalBeanView.m */,
+				C66653CB1FBCA1580009F30C /* BeanLargeBeanView.h */,
+				C66653CC1FBCA1580009F30C /* BeanLargeBeanView.m */,
+				C66653CE1FBCA1870009F30C /* BeanPooPooView.h */,
+				C66653CF1FBCA1870009F30C /* BeanPooPooView.m */,
 				C6ACA5EB1FB98FFF001D43A2 /* Main.storyboard */,
 				C6ACA5EE1FB98FFF001D43A2 /* Assets.xcassets */,
 				C6ACA5F01FB98FFF001D43A2 /* LaunchScreen.storyboard */,
@@ -176,15 +203,20 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C66653C71FBC9FC20009F30C /* BeanView.m in Sources */,
 				C6ACA5EA1FB98FFF001D43A2 /* ViewController.m in Sources */,
+				C66653C41FBC9F600009F30C /* BeansGenerator.m in Sources */,
 				C6ACA5F51FB98FFF001D43A2 /* main.m in Sources */,
 				C68123661FBC5A18002D6C23 /* BeanGamePhase.m in Sources */,
+				C66653CD1FBCA1580009F30C /* BeanLargeBeanView.m in Sources */,
 				C68123721FBC5A86002D6C23 /* BeanGameResultPhase.m in Sources */,
 				C68123691FBC5A2A002D6C23 /* BeanGamePhaseController.m in Sources */,
+				C66653D01FBCA1870009F30C /* BeanPooPooView.m in Sources */,
 				C6ACA5E71FB98FFE001D43A2 /* AppDelegate.m in Sources */,
 				C6ACA5FD1FB991D7001D43A2 /* BeanGameController.m in Sources */,
 				C681236F1FBC5A4F002D6C23 /* BeanGamePlayingPhase.m in Sources */,
 				C681236C1FBC5A3B002D6C23 /* BeanGameCountdownPhase.m in Sources */,
+				C66653CA1FBCA14C0009F30C /* BeanNormalBeanView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

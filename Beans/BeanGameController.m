@@ -7,75 +7,10 @@
 //
 
 #import "BeanGameController.h"
-
-@interface CanvasView : UIView
-
-@property (nonatomic, weak) ARSCNView * scnView;
-@property (nonatomic, strong) ARFaceAnchor * faceAnchor;
-@property (nonatomic, strong) SCNNode * leftNode;
-@property (nonatomic, strong) SCNNode * rightNode;
-
-@end
-
-@implementation CanvasView
-
-
-- (void)setLeftNode:(SCNNode *)leftNode
-{
-    if (_leftNode != leftNode) {
-        _leftNode = leftNode;
-    }
-    
-    dispatch_async(dispatch_get_main_queue(), ^{
-        [self setNeedsDisplay];
-    });
-}
-
-- (void)setRightNode:(SCNNode *)rightNode
-{
-    if (_rightNode != rightNode) {
-        _rightNode = rightNode;
-    }
-    
-    dispatch_async(dispatch_get_main_queue(), ^{
-        [self setNeedsDisplay];
-    });
-}
-
-- (void)drawRect:(CGRect)rect
-{
-    CGContextRef ctx = UIGraphicsGetCurrentContext();
-    CGContextSetFillColorWithColor(ctx, [UIColor redColor].CGColor);
-    
-    {
-        SCNNode * node = _leftNode;
-        
-        SCNVector3 position = [node worldPosition];
-        position = [_scnView projectPoint:position];
-        
-        CGFloat radius = 5;
-        {
-            CGRect rect = CGRectMake(position.x - radius, position.y - radius, 2 * radius, 2 * radius);
-            CGContextFillRect(ctx, rect);
-        }
-    }
-    
-    {
-        SCNNode * node = _rightNode;
-        
-        SCNVector3 position = [node worldPosition];
-        position = [_scnView projectPoint:position];
-        
-        CGFloat radius = 5;
-        {
-            CGRect rect = CGRectMake(position.x - radius, position.y - radius, 2 * radius, 2 * radius);
-            CGContextFillRect(ctx, rect);
-        }
-    }
-
-}
-
-@end
+#import "BeanGamePhaseController.h"
+#import "BeanGameCountdownPhase.h"
+#import "BeanGamePlayingPhase.h"
+#import "BeanGameResultPhase.h"
 
 @interface BeanGameController () <ARSessionDelegate, ARSCNViewDelegate>
 
@@ -83,7 +18,6 @@
 @property (nonatomic, weak) ARSCNView * scnView;
 @property (nonatomic, weak) UIView * contentView;
 @property (nonatomic, weak) UIView * interfaceView;
-@property (nonatomic, strong) CanvasView * canvasView;
 @property (nonatomic, strong) dispatch_queue_t sceneKitQueue;
 @property (nonatomic, strong) SCNNode * faceNode;
 @property (nonatomic, strong) SCNNode * mouthLeftNode;
@@ -91,6 +25,7 @@
 @property (nonatomic, strong) ARFaceAnchor * faceAnchor;
 
 @property (nonatomic, strong) UIView * mouthView;
+@property (nonatomic, strong) BeanGamePhaseController * phaseController;
 
 @end
 
@@ -106,20 +41,9 @@
         _interfaceView = interfaceView;
         _scnView.delegate = self;
         
-        [_contentView addSubview:self.canvasView];
         [_contentView addSubview:self.mouthView];
     }
     return self;
-}
-
-- (CanvasView *)canvasView
-{
-    if (!_canvasView) {
-        _canvasView = [[CanvasView alloc] initWithFrame:_contentView.bounds];
-        _canvasView.scnView = _scnView;
-        _canvasView.backgroundColor = [UIColor clearColor];
-    }
-    return _canvasView;
 }
 
 - (UIView *)mouthView
@@ -135,6 +59,9 @@
 - (void)start
 {
     [_session runWithConfiguration:[[ARFaceTrackingConfiguration alloc] init]];
+    
+    _phaseController = [[BeanGamePhaseController alloc] initWithPhases:@[[BeanGameCountdownPhase phase], [BeanGamePlayingPhase phase], [BeanGameResultPhase phase]] contentView:_contentView];
+    [_phaseController start];
 }
 
 - (void)setSession:(ARSession *)session

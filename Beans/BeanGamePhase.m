@@ -12,6 +12,11 @@
 
 @implementation BeanGamePhase
 
++ (instancetype)phase
+{
+    return [[self alloc] init];
+}
+
 - (void)setState:(BeanGamePhaseState)state
 {
     if (_state != state) {

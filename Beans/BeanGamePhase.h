@@ -17,6 +17,8 @@ typedef NS_ENUM(NSInteger, BeanGamePhaseState) {
 
 @interface BeanGamePhase : NSObject
 
++ (instancetype)phase;
+
 @property (nonatomic, assign, readonly) BeanGamePhaseState state;
 @property (nonatomic, copy, readonly) NSString * name;
 

@@ -7,7 +7,13 @@
 //
 
 #import "BeanGamePlayingPhase.h"
+#import "BeanGamePhase+SubClass.h"
 
 @implementation BeanGamePlayingPhase
+
+- (void)_runPhase
+{
+    NSLog(@"Start Playing");
+}
 
 @end
