@@ -11,33 +11,35 @@
 @interface CanvasView : UIView
 
 @property (nonatomic, weak) ARSCNView * scnView;
-@property (nonatomic, strong) ARFaceGeometry * geometry;
-@property (nonatomic, strong) SCNNode * node;
+@property (nonatomic, strong) ARFaceAnchor * faceAnchor;
+@property (nonatomic, strong) SCNNode * leftNode;
+@property (nonatomic, strong) SCNNode * rightNode;
 
 @end
 
 @implementation CanvasView
 
-- (void)setGeometry:(ARFaceGeometry *)geometry
-{
-    if (_geometry != geometry) {
-        _geometry = geometry;
-        
-        [self setNeedsDisplay];
-    }
-}
 
-- (void)setNode:(SCNNode *)node
+- (void)setLeftNode:(SCNNode *)leftNode
 {
-    if (_node != node) {
-        _node = node;
-        
+    if (_leftNode != leftNode) {
+        _leftNode = leftNode;
     }
     
     dispatch_async(dispatch_get_main_queue(), ^{
         [self setNeedsDisplay];
     });
+}
 
+- (void)setRightNode:(SCNNode *)rightNode
+{
+    if (_rightNode != rightNode) {
+        _rightNode = rightNode;
+    }
+    
+    dispatch_async(dispatch_get_main_queue(), ^{
+        [self setNeedsDisplay];
+    });
 }
 
 - (void)drawRect:(CGRect)rect
@@ -45,72 +47,31 @@
     CGContextRef ctx = UIGraphicsGetCurrentContext();
     CGContextSetFillColorWithColor(ctx, [UIColor redColor].CGColor);
     
-    SCNNode * node = _node;
-    
-    SCNVector3 position = [node worldPosition];
-    position = [_scnView projectPoint:position];
-    
-    CGFloat radius = 5;
     {
-        CGRect rect = CGRectMake(position.x - radius, position.y - radius, 2 * radius, 2 * radius);
-        CGContextFillRect(ctx, rect);
+        SCNNode * node = _leftNode;
+        
+        SCNVector3 position = [node worldPosition];
+        position = [_scnView projectPoint:position];
+        
+        CGFloat radius = 5;
+        {
+            CGRect rect = CGRectMake(position.x - radius, position.y - radius, 2 * radius, 2 * radius);
+            CGContextFillRect(ctx, rect);
+        }
     }
-
     
-    SCNVector3 boundingMin, boundingMax;
-    [node getBoundingBoxMin:&boundingMin max:&boundingMax];
-    
-////    boundingMin = [node convertVector:boundingMin toNode:_scnView.pointOfView];
-////    boundingMax = [node convertVector:boundingMax toNode:_scnView.pointOfView];
-//
-//    boundingMin = [_scnView projectPoint:boundingMin];
-//    boundingMax = [_scnView projectPoint:boundingMax];
-//    CGPoint min = CGPointMake(boundingMin.x, boundingMin.y);
-//    CGPoint max = CGPointMake(boundingMax.x, boundingMax.y);
-//
-//    CGFloat radius = 5;
-//    {
-//        CGRect rect = CGRectMake(min.x - radius, min.y - radius, 2 * radius, 2 * radius);
-//        CGContextFillRect(ctx, rect);
-//    }
-//    {
-//        CGRect rect = CGRectMake(max.x - radius, max.y - radius, 2 * radius, 2 * radius);
-//        CGContextFillRect(ctx, rect);
-//    }
-
-
-//    if (!_geometry) {
-//        return;
-//    }
-//
-//    CGContextRef ctx = UIGraphicsGetCurrentContext();
-//    CGContextSetFillColorWithColor(ctx, [UIColor redColor].CGColor);
-//
-//    CGSize size = _scnView.bounds.size;
-//
-//    for (NSInteger i = 0; i < _geometry.vertexCount; i++) {
-//        vector_float3 vertor = _geometry.vertices[i];
-//        SCNVector3 scnVector = SCNVector3Make(vertor[0], vertor[1], vertor[2]);
-//        scnVector = [_scnView projectPoint:scnVector];
-//
-//        CGRect rect = CGRectMake(point.x - 1, point.y - 1, 2, 2);
-//        CGContextFillRect(ctx, rect);
-//    }
-
-//    CGSize size = _scnView.bounds.size;
-//
-//    for (NSInteger i = 0; i < _geometry.textureCoordinateCount; i++) {
-//        vector_float2 vertor = _geometry.textureCoordinates[i];
-////        SCNVector3 scnVector = SCNVector3Make(vertor[0], vertor[1], vertor[2]);
-////        scnVector = [_scnView projectPoint:scnVector];
-//        CGPoint point = CGPointMake(vertor[0], vertor[1]);
-//
-//        point.x *= size.width;
-//        point.y *= size.height;
-//
-//        CGRect rect = CGRectMake(point.x - 1, point.y - 1, 2, 2);
-//        CGContextFillRect(ctx, rect);
-//    }
+    {
+        SCNNode * node = _rightNode;
+        
+        SCNVector3 position = [node worldPosition];
+        position = [_scnView projectPoint:position];
+        
+        CGFloat radius = 5;
+        {
+            CGRect rect = CGRectMake(position.x - radius, position.y - radius, 2 * radius, 2 * radius);
+            CGContextFillRect(ctx, rect);
+        }
+    }
 
 }
 
@@ -123,6 +84,13 @@
 @property (nonatomic, weak) UIView * contentView;
 @property (nonatomic, weak) UIView * interfaceView;
 @property (nonatomic, strong) CanvasView * canvasView;
+@property (nonatomic, strong) dispatch_queue_t sceneKitQueue;
+@property (nonatomic, strong) SCNNode * faceNode;
+@property (nonatomic, strong) SCNNode * mouthLeftNode;
+@property (nonatomic, strong) SCNNode * mouthRightNode;
+@property (nonatomic, strong) ARFaceAnchor * faceAnchor;
+
+@property (nonatomic, strong) UIView * mouthView;
 
 @end
 
@@ -131,6 +99,7 @@
 - (instancetype)initWithARSCNView:(ARSCNView *)scnView contentContainerView:(UIView *)contentView interfaceContainerView:(UIView *)interfaceView
 {
     if (self = [self init]) {
+        _sceneKitQueue = dispatch_queue_create("com.wutian.scenekitqueue", NULL);
         _scnView = scnView;
         self.session = _scnView.session;
         _contentView = contentView;
@@ -138,6 +107,7 @@
         _scnView.delegate = self;
         
         [_contentView addSubview:self.canvasView];
+        [_contentView addSubview:self.mouthView];
     }
     return self;
 }
@@ -150,6 +120,16 @@
         _canvasView.backgroundColor = [UIColor clearColor];
     }
     return _canvasView;
+}
+
+- (UIView *)mouthView
+{
+    if (!_mouthView) {
+        _mouthView = [[UIView alloc] initWithFrame:CGRectZero];
+        _mouthView.backgroundColor = [UIColor redColor];
+        _mouthView.layer.anchorPoint = CGPointMake(0, 0);
+    }
+    return _mouthView;
 }
 
 - (void)start
@@ -173,68 +153,126 @@
     }
 }
 
-- (void)session:(ARSession *)session didUpdateFrame:(ARFrame *)frame
+- (SCNNode *)mouthLeftNode
 {
-    
+    if (!_mouthLeftNode) {
+        _mouthLeftNode = [[SCNNode alloc] init];
+        [_mouthLeftNode setPosition:SCNVector3Make(-0.028, -0.036, 0.045)];
+        [_mouthLeftNode setScale:SCNVector3Make(1.0, 1.0, 1.0)];
+    }
+    return _mouthLeftNode;
 }
 
-- (void)session:(ARSession *)session didAddAnchors:(NSArray<ARAnchor*>*)anchors
+- (SCNNode *)mouthRightNode
 {
-    
+    if (!_mouthRightNode) {
+        _mouthRightNode = [[SCNNode alloc] init];
+        [_mouthRightNode setPosition:SCNVector3Make(0.028, -0.036, 0.045)];
+        [_mouthRightNode setScale:SCNVector3Make(1.0, 1.0, 1.0)];
+    }
+    return _mouthRightNode;
 }
 
-- (void)session:(ARSession *)session didUpdateAnchors:(NSArray<ARAnchor*>*)anchors
+- (void)setupFaceNode
 {
-    for (ARFaceAnchor * faceAnchor in anchors) {
-        if (![faceAnchor isKindOfClass:[ARFaceAnchor class]]) {
-            return;
-        }
+    if (!_faceNode) {
+        return;
+    }
+    
+    for (SCNNode * child in _faceNode.childNodes) {
+        [child removeFromParentNode];
+    }
+    
+    [_faceNode addChildNode:self.mouthLeftNode];
+    [_faceNode addChildNode:self.mouthRightNode];
+}
 
-        ARFaceGeometry * geometry = faceAnchor.geometry;
-
-        _canvasView.geometry = geometry;
-        
-//        CGRect frame = CGRectZero;
-//
-//        for (NSInteger i = 0; i < geometry.vertexCount; i++) {
-//            vector_float3 vertor = geometry.vertices[i];
-//            SCNVector3 scnVector = SCNVector3Make(vertor[0], vertor[1], vertor[2]);
-//            scnVector = [_scnView projectPoint:scnVector];
-//            CGPoint point = CGPointMake(scnVector.x, scnVector.y);
-//
-//            NSLog(@"%@", NSStringFromCGPoint(point));
-//
-//            if (CGRectEqualToRect(frame, CGRectZero)) {
-//                frame.origin = point;
-//            } else {
-//                CGRect temp = CGRectZero;
-//                temp.origin = point;
-//                frame = CGRectUnion(frame, temp);
-//            }
-//        }
-//
-//        NSLog(@"Anchor: %@", NSStringFromCGRect(frame));
+- (void)updateMouthState
+{
+    double mouthClose = [_faceAnchor.blendShapes[ARBlendShapeLocationMouthClose] doubleValue];
+    // close: ~0.004, open: ~0.18
+    if (mouthClose > 0.05) {
+        _mouthView.backgroundColor = [UIColor greenColor];
+    } else {
+        _mouthView.backgroundColor = [UIColor redColor];
     }
 }
 
-- (void)renderer:(id <SCNSceneRenderer>)renderer didUpdateNode:(SCNNode *)node forAnchor:(ARAnchor *)anchor
+- (void)updateMouthArea
 {
-    _canvasView.node = node;
-//    SCNVector3 boundingMin, boundingMax;
-//    [node getBoundingBoxMin:&boundingMin max:&boundingMax];
-//    boundingMin = [node convertVector:boundingMin toNode:_scnView.pointOfView];
-//    boundingMax = [node convertVector:boundingMax toNode:_scnView.pointOfView];
-//
-//    boundingMin = [renderer projectPoint:boundingMin];
-//    boundingMax = [renderer projectPoint:boundingMax];
-//    CGPoint min = CGPointMake(boundingMin.x, boundingMin.y);
-//    CGPoint max = CGPointMake(boundingMax.x, boundingMax.y);
-//    NSLog(@"min: %@, max: %@", NSStringFromCGPoint(min), NSStringFromCGPoint(max));
+    SCNVector3 lposition = [_mouthLeftNode worldPosition];
+    lposition = [_scnView projectPoint:lposition];
+    CGPoint leftPoint = CGPointMake(lposition.x, lposition.y);
+
+    SCNVector3 rposition = [_mouthRightNode worldPosition];
+    rposition = [_scnView projectPoint:rposition];
+    CGPoint rightPoint = CGPointMake(rposition.x, rposition.y);
+    
+    /*
+         rp
+        /  |
+       /   |
+      /    |
+     /     |
+    /<-rot |
+   lp ----- cp
+    */
+    
+    CGPoint lp = leftPoint, rp = rightPoint, cp = CGPointMake(rp.x, lp.y);
+    
+    double lp2rp = sqrt(pow((rightPoint.x - leftPoint.x), 2) + pow((rightPoint.y - leftPoint.y), 2));
+    double lp2cp = ABS(cp.x - lp.x);
+    
+    double rot = acos(lp2cp / lp2rp);
+    if (rp.y <= lp.y) {
+        rot = -rot;
+    }
+    if (rp.x < lp.x) {
+        rot = (2 * M_PI) - rot;
+    }
+    
+    if (isnan(lp.x) || isnan(lp.y) || isnan(lp2cp) || lp2cp == 0) {
+        return;
+    }
+    
+    CGRect frame = CGRectMake(lp.x, lp.y, lp2cp, 5);
+    
+    if (CGRectIsNull(frame)) {
+        return;
+    }
+    
+    dispatch_async(dispatch_get_main_queue(), ^{
+        _mouthView.transform = CGAffineTransformIdentity;
+        _mouthView.frame = frame;
+        _mouthView.transform = CGAffineTransformMakeRotation(rot);
+    });
 }
 
-- (void)session:(ARSession *)session didRemoveAnchors:(NSArray<ARAnchor*>*)anchors
+- (void)renderer:(id<SCNSceneRenderer>)renderer didAddNode:(SCNNode *)node forAnchor:(ARAnchor *)anchor
 {
-    
+    _faceNode = node;
+    if ([anchor isKindOfClass:[ARFaceAnchor class]]) {
+        _faceAnchor = (ARFaceAnchor *)anchor;
+    }
+    dispatch_async(_sceneKitQueue, ^{
+        [self setupFaceNode];
+    });
+}
+
+- (void)session:(ARSession *)session didUpdateAnchors:(NSArray<ARAnchor *> *)anchors
+{
+    for (ARAnchor * anchor in anchors) {
+        if ([anchor isKindOfClass:[ARFaceAnchor class]]) {
+            _faceAnchor = (ARFaceAnchor *)anchor;
+            break;
+        }
+    }
+    [self updateMouthState];
+}
+
+- (void)session:(ARSession *)session didUpdateFrame:(ARFrame *)frame
+{
+    [self updateMouthArea];
 }
 
 @end
