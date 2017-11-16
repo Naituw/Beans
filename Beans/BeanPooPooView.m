@@ -10,12 +10,19 @@
 
 @implementation BeanPooPooView
 
-/*
-// Only override drawRect: if you perform custom drawing.
-// An empty implementation adversely affects performance during animation.
-- (void)drawRect:(CGRect)rect {
-    // Drawing code
++ (NSString *)imageName
+{
+    return @"shit_normal";
 }
-*/
+
++ (NSString *)bittenImageName
+{
+    return @"shit_eat";
+}
+
+- (NSInteger)score
+{
+    return -400;
+}
 
 @end

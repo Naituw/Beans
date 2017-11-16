@@ -10,4 +10,8 @@
 
 @interface BeanGamePlayingPhase : BeanGamePhase
 
+- (void)setLeftMouthPoint:(CGPoint)leftPoint rightMouthPoint:(CGPoint)rightPoint;
+- (void)bite;
+- (void)unbite;
+
 @end

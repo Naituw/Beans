@@ -26,6 +26,9 @@
 
 @property (nonatomic, strong) UIView * mouthView;
 @property (nonatomic, strong) BeanGamePhaseController * phaseController;
+@property (nonatomic, strong) BeanGamePlayingPhase * playingPhase;
+
+@property (nonatomic, assign) BOOL mouthOpen;
 
 @end
 
@@ -60,8 +63,19 @@
 {
     [_session runWithConfiguration:[[ARFaceTrackingConfiguration alloc] init]];
     
-    _phaseController = [[BeanGamePhaseController alloc] initWithPhases:@[[BeanGameCountdownPhase phase], [BeanGamePlayingPhase phase], [BeanGameResultPhase phase]] contentView:_contentView];
+    _phaseController = [[BeanGamePhaseController alloc] initWithPhases:@[
+//                                                                         [BeanGameCountdownPhase phase],
+                                                                         self.playingPhase,
+                                                                         [BeanGameResultPhase phase]] contentView:_contentView];
     [_phaseController start];
+}
+
+- (BeanGamePlayingPhase *)playingPhase
+{
+    if (!_playingPhase) {
+        _playingPhase = [BeanGamePlayingPhase phase];
+    }
+    return _playingPhase;
 }
 
 - (void)setSession:(ARSession *)session
@@ -114,15 +128,24 @@
     [_faceNode addChildNode:self.mouthRightNode];
 }
 
+- (void)setMouthOpen:(BOOL)mouthOpen
+{
+    if (_mouthOpen != mouthOpen) {
+        _mouthOpen = mouthOpen;
+        
+        _mouthView.backgroundColor = mouthOpen ? [UIColor greenColor] : [UIColor redColor];
+        
+        if (mouthOpen) {
+            [_playingPhase bite];
+        }
+    }
+}
+
 - (void)updateMouthState
 {
     double mouthClose = [_faceAnchor.blendShapes[ARBlendShapeLocationMouthClose] doubleValue];
     // close: ~0.004, open: ~0.18
-    if (mouthClose > 0.05) {
-        _mouthView.backgroundColor = [UIColor greenColor];
-    } else {
-        _mouthView.backgroundColor = [UIColor redColor];
-    }
+    self.mouthOpen = mouthClose > 0.04;
 }
 
 - (void)updateMouthArea
@@ -134,6 +157,8 @@
     SCNVector3 rposition = [_mouthRightNode worldPosition];
     rposition = [_scnView projectPoint:rposition];
     CGPoint rightPoint = CGPointMake(rposition.x, rposition.y);
+    
+    [_playingPhase setLeftMouthPoint:leftPoint rightMouthPoint:rightPoint];
     
     /*
          rp

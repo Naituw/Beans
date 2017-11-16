@@ -13,7 +13,7 @@ typedef NS_ENUM(NSInteger, BeanViewState) {
     BeanViewStateBitten = 1,
 };
 
-@interface BeanView : UIView
+@interface BeanView : CALayer
 
 + (instancetype)view;
 

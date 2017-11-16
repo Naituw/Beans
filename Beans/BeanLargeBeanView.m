@@ -7,15 +7,28 @@
 //
 
 #import "BeanLargeBeanView.h"
+#import "BeanView+SubClass.h"
 
 @implementation BeanLargeBeanView
 
-/*
-// Only override drawRect: if you perform custom drawing.
-// An empty implementation adversely affects performance during animation.
-- (void)drawRect:(CGRect)rect {
-    // Drawing code
++ (NSString *)imageName
+{
+    return @"orange_normal";
 }
-*/
+
++ (NSString *)bittenImageName
+{
+    return @"orange_eat";
+}
+
++ (CGSize)defaultSize
+{
+    return CGSizeMake(60, 60);
+}
+
+- (NSInteger)score
+{
+    return 200;
+}
 
 @end

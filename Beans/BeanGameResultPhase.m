@@ -7,7 +7,20 @@
 //
 
 #import "BeanGameResultPhase.h"
+#import "BeanGamePhase+SubClass.h"
 
 @implementation BeanGameResultPhase
+
+- (void)_runPhase
+{
+    NSLog(@"Complete!");
+    
+    [self performSelector:@selector(finish) withObject:nil afterDelay:3];
+}
+
+- (void)finish
+{
+    self.state = BeanGamePhaseStateCompleted;
+}
 
 @end

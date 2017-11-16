@@ -17,6 +17,7 @@
 		C681236C1FBC5A3B002D6C23 /* BeanGameCountdownPhase.m in Sources */ = {isa = PBXBuildFile; fileRef = C681236B1FBC5A3B002D6C23 /* BeanGameCountdownPhase.m */; };
 		C681236F1FBC5A4F002D6C23 /* BeanGamePlayingPhase.m in Sources */ = {isa = PBXBuildFile; fileRef = C681236E1FBC5A4F002D6C23 /* BeanGamePlayingPhase.m */; };
 		C68123721FBC5A86002D6C23 /* BeanGameResultPhase.m in Sources */ = {isa = PBXBuildFile; fileRef = C68123711FBC5A86002D6C23 /* BeanGameResultPhase.m */; };
+		C681237A1FBDA265002D6C23 /* BeanLayerContainerView.m in Sources */ = {isa = PBXBuildFile; fileRef = C68123791FBDA264002D6C23 /* BeanLayerContainerView.m */; };
 		C6ACA5E71FB98FFE001D43A2 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = C6ACA5E61FB98FFE001D43A2 /* AppDelegate.m */; };
 		C6ACA5EA1FB98FFF001D43A2 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C6ACA5E91FB98FFF001D43A2 /* ViewController.m */; };
 		C6ACA5ED1FB98FFF001D43A2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C6ACA5EB1FB98FFF001D43A2 /* Main.storyboard */; };
@@ -50,6 +51,10 @@
 		C68123711FBC5A86002D6C23 /* BeanGameResultPhase.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BeanGameResultPhase.m; sourceTree = "<group>"; };
 		C68123731FBC5AF5002D6C23 /* BeanGamePhase+SubClass.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "BeanGamePhase+SubClass.h"; sourceTree = "<group>"; };
 		C68123751FBC5E02002D6C23 /* BeanGamePhase+Private.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "BeanGamePhase+Private.h"; sourceTree = "<group>"; };
+		C68123761FBD4AF2002D6C23 /* BeanView+Private.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "BeanView+Private.h"; sourceTree = "<group>"; };
+		C68123781FBDA264002D6C23 /* BeanLayerContainerView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BeanLayerContainerView.h; sourceTree = "<group>"; };
+		C68123791FBDA264002D6C23 /* BeanLayerContainerView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BeanLayerContainerView.m; sourceTree = "<group>"; };
+		C681237B1FBDAAF5002D6C23 /* BeanGameDefines.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BeanGameDefines.h; sourceTree = "<group>"; };
 		C6ACA5E21FB98FFE001D43A2 /* Beans.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Beans.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C6ACA5E51FB98FFE001D43A2 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		C6ACA5E61FB98FFE001D43A2 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -98,6 +103,7 @@
 				C6ACA5E61FB98FFE001D43A2 /* AppDelegate.m */,
 				C6ACA5E81FB98FFF001D43A2 /* ViewController.h */,
 				C6ACA5E91FB98FFF001D43A2 /* ViewController.m */,
+				C681237B1FBDAAF5002D6C23 /* BeanGameDefines.h */,
 				C6ACA5FB1FB991D7001D43A2 /* BeanGameController.h */,
 				C6ACA5FC1FB991D7001D43A2 /* BeanGameController.m */,
 				C68123641FBC5A18002D6C23 /* BeanGamePhase.h */,
@@ -116,6 +122,9 @@
 				C66653C31FBC9F600009F30C /* BeansGenerator.m */,
 				C66653C51FBC9FC20009F30C /* BeanView.h */,
 				C66653C61FBC9FC20009F30C /* BeanView.m */,
+				C68123781FBDA264002D6C23 /* BeanLayerContainerView.h */,
+				C68123791FBDA264002D6C23 /* BeanLayerContainerView.m */,
+				C68123761FBD4AF2002D6C23 /* BeanView+Private.h */,
 				C66653D11FBCA7720009F30C /* BeanView+SubClass.h */,
 				C66653C81FBCA14C0009F30C /* BeanNormalBeanView.h */,
 				C66653C91FBCA14C0009F30C /* BeanNormalBeanView.m */,
@@ -210,6 +219,7 @@
 				C68123661FBC5A18002D6C23 /* BeanGamePhase.m in Sources */,
 				C66653CD1FBCA1580009F30C /* BeanLargeBeanView.m in Sources */,
 				C68123721FBC5A86002D6C23 /* BeanGameResultPhase.m in Sources */,
+				C681237A1FBDA265002D6C23 /* BeanLayerContainerView.m in Sources */,
 				C68123691FBC5A2A002D6C23 /* BeanGamePhaseController.m in Sources */,
 				C66653D01FBCA1870009F30C /* BeanPooPooView.m in Sources */,
 				C6ACA5E71FB98FFE001D43A2 /* AppDelegate.m in Sources */,
