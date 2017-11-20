@@ -11,6 +11,7 @@
 #import "BeanGameCountdownPhase.h"
 #import "BeanGamePlayingPhase.h"
 #import "BeanGameResultPhase.h"
+#import "BeanGameDefines.h"
 
 @interface BeanGameController () <ARSessionDelegate, ARSCNViewDelegate>
 
@@ -44,7 +45,9 @@
         _interfaceView = interfaceView;
         _scnView.delegate = self;
         
-        [_contentView addSubview:self.mouthView];
+        if (BeanGameMouthTrackDebugging) {
+            [_contentView addSubview:self.mouthView];
+        }
     }
     return self;
 }
@@ -61,7 +64,9 @@
 
 - (void)start
 {
-    [_session runWithConfiguration:[[ARFaceTrackingConfiguration alloc] init]];
+    ARFaceTrackingConfiguration * config = [[ARFaceTrackingConfiguration alloc] init];
+    config.lightEstimationEnabled = NO;
+    [_session runWithConfiguration:config];
     
     _phaseController = [[BeanGamePhaseController alloc] initWithPhases:@[
 //                                                                         [BeanGameCountdownPhase phase],
@@ -136,6 +141,8 @@
         _mouthView.backgroundColor = mouthOpen ? [UIColor greenColor] : [UIColor redColor];
         
         if (mouthOpen) {
+            [_playingPhase unbite];
+        } else {
             [_playingPhase bite];
         }
     }
@@ -145,7 +152,10 @@
 {
     double mouthClose = [_faceAnchor.blendShapes[ARBlendShapeLocationMouthClose] doubleValue];
     // close: ~0.004, open: ~0.18
-    self.mouthOpen = mouthClose > 0.04;
+    double mouthCloseMin = 0.01;
+    double mouthCloseMax = 0.15;
+    
+    self.mouthOpen = mouthClose > ((mouthCloseMax - mouthCloseMin) * BeanGameMouthOpenSensitivity + mouthCloseMin);
 }
 
 - (void)updateMouthArea
@@ -160,6 +170,9 @@
     
     [_playingPhase setLeftMouthPoint:leftPoint rightMouthPoint:rightPoint];
     
+    if (!_mouthView) {
+        return;
+    }
     /*
          rp
         /  |

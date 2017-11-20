@@ -197,7 +197,25 @@ static BOOL OvalHitTest(CGPoint center, CGFloat radius, CGPoint linePoint1, CGPo
         CGFloat radius = [[beanView class] defaultSize].width / 2 + BeanGameBeanRadiusExtend;
         
         CGPoint fdOut = CGPointZero;
-        if (OvalHitTest(center, radius, _leftMouthPoint, _rightMouthPoint, &fdOut) || OvalHitTest(center, radius, CGPointMake(_leftMouthPoint.x, _leftMouthPoint.y + BeanGameMouthBottomExtend), CGPointMake(_rightMouthPoint.x, _rightMouthPoint.y + BeanGameMouthBottomExtend), &fdOut)) {
+        double extend = 0;
+        double extendInterval = 20;
+        
+        BOOL hit = NO;
+        while (!hit && extend <= BeanGameMouthBottomExtend) {
+            if (OvalHitTest(center, radius, CGPointMake(_leftMouthPoint.x, _leftMouthPoint.y + extend), CGPointMake(_rightMouthPoint.x, _rightMouthPoint.y + extend), &fdOut)) {
+                hit = YES;
+                break;
+            }
+            
+            if (extend == BeanGameMouthBottomExtend) {
+                break;
+            }
+            
+            extend += extendInterval;
+            extend = MIN(extend, BeanGameMouthBottomExtend);
+        }
+        
+        if (hit) {
             [biteBeans addObject:beanView];
             
             double progress = (fdOut.x - _leftMouthPoint.x) / (_rightMouthPoint.x - _leftMouthPoint.x);

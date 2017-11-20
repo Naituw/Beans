@@ -11,7 +11,9 @@
 
 #define BeanGameDuration 30.0
 #define BeanGameBeanRadiusExtend 5.0
-#define BeanGameMouthBottomExtend 40.0
-#define BeanGameMouthBiteExpires 0.15
+#define BeanGameMouthBottomExtend 80.0
+#define BeanGameMouthBiteExpires 0.08
+#define BeanGameMouthOpenSensitivity 0.4
+#define BeanGameMouthTrackDebugging YES
 
 #endif /* BeanGameDefines_h */
