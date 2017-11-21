@@ -34,12 +34,25 @@
     }
 }
 
+- (void)stop
+{
+    if (_state == BeanGamePhaseStateRunning) {
+        [self _stopPhase];
+        self.state = BeanGamePhaseStateCompleted;
+    }
+}
+
 - (void)_gameWillStart
 {
     
 }
 
 - (void)_runPhase
+{
+    // implement in subclass
+}
+
+- (void)_stopPhase
 {
     // implement in subclass
 }

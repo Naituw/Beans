@@ -13,6 +13,11 @@
 #import "BeansGenerator.h"
 #import "BeanLayerContainerView.h"
 #import "BeanGameDefines.h"
+#import "BeanScoreView.h"
+#import "BeanScoreView.h"
+#import "BeanGameResource.h"
+#import "EXTScope.h"
+#import "UIView+WBTSizes.h"
 
 @interface BeanGamePlayingPhase ()
 
@@ -20,6 +25,7 @@
 @property (nonatomic, assign) CGPoint leftMouthPoint;
 @property (nonatomic, assign) CGPoint rightMouthPoint;
 @property (nonatomic, assign) CFTimeInterval mostRecentBiteTime;
+@property (nonatomic, strong) BeanScoreView * scoreView;
 
 @end
 
@@ -32,10 +38,29 @@
     return self;
 }
 
+- (void)_gameWillStart
+{
+    _scoreView = [[BeanScoreView alloc] init];
+    @weakify(self);
+    [_scoreView setSizeUpdateBlock:^{
+        @strongify(self);
+        [self layout];
+    }];
+    [self.contentView addSubview:_scoreView];
+    
+    [self layout];
+}
+
+- (void)layout
+{
+    _scoreView.wbtRight = self.contentView.wbtWidth - 15;
+    _scoreView.wbtTop = 10 + 22;
+}
+
 - (void)_runPhase
 {
     NSLog(@"Start Playing");
-
+    
     _generator = [[BeansGenerator alloc] initWithContentView:self.contentView];
     
     __weak typeof(self) weakSelf = self;
@@ -243,6 +268,22 @@ static BOOL OvalHitTest(CGPoint center, CGFloat radius, CGPoint linePoint1, CGPo
         }
         [self _biteBeans:biteBeans];
     }
+}
+
+- (void)_mockScores
+{
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        _scoreView.score = 200;
+        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+            _scoreView.score = 400;
+            dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+                _scoreView.score = 1200;
+                dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+                    _scoreView.score = 200;
+                });
+            });
+        });
+    });
 }
 
 @end

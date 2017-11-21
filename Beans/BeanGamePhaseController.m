@@ -15,6 +15,7 @@
 @property (nonatomic, strong) NSArray<BeanGamePhase *> * phases;
 @property (nonatomic, strong) NSMutableArray<BeanGamePhase *> * phasesToRun;
 @property (nonatomic, weak) UIView * contentView;
+@property (nonatomic, assign) BOOL running;
 
 @end
 
@@ -41,7 +42,15 @@
         phase.contentView = _contentView;
     }
     [self _gameWillStart];
+    
+    _running = YES;
+    
     [self _runNextPhase];
+}
+
+- (void)stop
+{
+    [_phasesToRun.firstObject stop];
 }
 
 - (void)_gameWillStart
@@ -65,6 +74,10 @@
 - (void)_currentPhaseCompleted
 {
     [_phasesToRun removeObjectAtIndex:0];
+    
+    if (!_running) {
+        return;
+    }
     
     if (_phasesToRun.count) {
         [self _runNextPhase];

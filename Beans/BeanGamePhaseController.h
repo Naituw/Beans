@@ -14,5 +14,6 @@
 - (instancetype)initWithPhases:(NSArray<BeanGamePhase *> *)phases contentView:(UIView *)contentView;
 
 - (void)start;
+- (void)stop;
 
 @end

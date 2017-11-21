@@ -14,6 +14,7 @@
 
 - (void)_gameWillStart;
 - (void)_runPhase;
+- (void)_stopPhase;
 - (void)_gameDidFinish;
 
 @end

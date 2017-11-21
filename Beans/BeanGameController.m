@@ -12,6 +12,7 @@
 #import "BeanGamePlayingPhase.h"
 #import "BeanGameResultPhase.h"
 #import "BeanGameDefines.h"
+#import "FBTweakViewController.h"
 
 @interface BeanGameController () <ARSessionDelegate, ARSCNViewDelegate>
 
@@ -73,6 +74,12 @@
                                                                          self.playingPhase,
                                                                          [BeanGameResultPhase phase]] contentView:_contentView];
     [_phaseController start];
+}
+
+- (void)stop
+{
+    [_session pause];
+    [_phaseController stop];
 }
 
 - (BeanGamePlayingPhase *)playingPhase

@@ -9,7 +9,9 @@
 #ifndef BeanGameDefines_h
 #define BeanGameDefines_h
 
-#define BeanGameDuration 30.0
+#import "FBTweakInline.h"
+
+#define BeanGameDuration FBTweakValue(@"Game Play", @"Game", @"Game Duration", 30.0)
 #define BeanGameBeanRadiusExtend 5.0
 #define BeanGameMouthBottomExtend 80.0
 #define BeanGameMouthBiteExpires 0.08

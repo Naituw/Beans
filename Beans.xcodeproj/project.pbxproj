@@ -7,6 +7,42 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C622EB621FC46FE800EA2EAC /* BeanScoreView.m in Sources */ = {isa = PBXBuildFile; fileRef = C622EB611FC46FE800EA2EAC /* BeanScoreView.m */; };
+		C622EB651FC4705900EA2EAC /* BeanGameResource.m in Sources */ = {isa = PBXBuildFile; fileRef = C622EB641FC4705900EA2EAC /* BeanGameResource.m */; };
+		C6269C531FC4757600F7B27A /* BeanAnimatedCountView.m in Sources */ = {isa = PBXBuildFile; fileRef = C6269C521FC4757600F7B27A /* BeanAnimatedCountView.m */; };
+		C6269C561FC4821C00F7B27A /* BeanNoAnimationLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = C6269C551FC4821C00F7B27A /* BeanNoAnimationLayer.m */; };
+		C6269C881FC4859F00F7B27A /* _FBTweakDictionaryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C6269C591FC4859700F7B27A /* _FBTweakDictionaryViewController.m */; };
+		C6269C891FC4859F00F7B27A /* _FBTweakCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C6269C5C1FC4859700F7B27A /* _FBTweakCollectionViewController.m */; };
+		C6269C8A1FC4859F00F7B27A /* _FBColorWheelCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C6269C5D1FC4859700F7B27A /* _FBColorWheelCell.m */; };
+		C6269C8B1FC4859F00F7B27A /* _FBTweakCategoryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C6269C5F1FC4859700F7B27A /* _FBTweakCategoryViewController.m */; };
+		C6269C8C1FC4859F00F7B27A /* _FBColorUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = C6269C611FC4859800F7B27A /* _FBColorUtils.m */; };
+		C6269C8D1FC4859F00F7B27A /* FBTweakCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = C6269C621FC4859800F7B27A /* FBTweakCategory.m */; };
+		C6269C8E1FC4859F00F7B27A /* _FBTweakBindObserver.m in Sources */ = {isa = PBXBuildFile; fileRef = C6269C641FC4859800F7B27A /* _FBTweakBindObserver.m */; };
+		C6269C8F1FC4859F00F7B27A /* _FBTweakColorViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C6269C651FC4859800F7B27A /* _FBTweakColorViewController.m */; };
+		C6269C901FC4859F00F7B27A /* FBTweakStore.m in Sources */ = {isa = PBXBuildFile; fileRef = C6269C691FC4859900F7B27A /* FBTweakStore.m */; };
+		C6269C911FC4859F00F7B27A /* _FBColorComponentCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C6269C6F1FC4859A00F7B27A /* _FBColorComponentCell.m */; };
+		C6269C921FC4859F00F7B27A /* _FBSliderView.m in Sources */ = {isa = PBXBuildFile; fileRef = C6269C711FC4859A00F7B27A /* _FBSliderView.m */; };
+		C6269C931FC4859F00F7B27A /* _FBKeyboardManager.m in Sources */ = {isa = PBXBuildFile; fileRef = C6269C721FC4859A00F7B27A /* _FBKeyboardManager.m */; };
+		C6269C941FC4859F00F7B27A /* _FBTweakArrayViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C6269C751FC4859B00F7B27A /* _FBTweakArrayViewController.m */; };
+		C6269C951FC4859F00F7B27A /* _FBTweakTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C6269C761FC4859B00F7B27A /* _FBTweakTableViewCell.m */; };
+		C6269C961FC4859F00F7B27A /* FBTweak.m in Sources */ = {isa = PBXBuildFile; fileRef = C6269C771FC4859B00F7B27A /* FBTweak.m */; };
+		C6269C971FC4859F00F7B27A /* FBTweakInline.m in Sources */ = {isa = PBXBuildFile; fileRef = C6269C791FC4859C00F7B27A /* FBTweakInline.m */; };
+		C6269C981FC4859F00F7B27A /* FBTweakShakeWindow.m in Sources */ = {isa = PBXBuildFile; fileRef = C6269C7C1FC4859C00F7B27A /* FBTweakShakeWindow.m */; };
+		C6269C991FC4859F00F7B27A /* FBTweakViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C6269C7E1FC4859C00F7B27A /* FBTweakViewController.m */; };
+		C6269C9A1FC4859F00F7B27A /* _FBTweakColorViewControllerHSBDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = C6269C821FC4859D00F7B27A /* _FBTweakColorViewControllerHSBDataSource.m */; };
+		C6269C9B1FC4859F00F7B27A /* _FBTweakColorViewControllerHexDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = C6269C831FC4859E00F7B27A /* _FBTweakColorViewControllerHexDataSource.m */; };
+		C6269C9C1FC4859F00F7B27A /* _FBTweakColorViewControllerRGBDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = C6269C861FC4859F00F7B27A /* _FBTweakColorViewControllerRGBDataSource.m */; };
+		C6269C9D1FC4859F00F7B27A /* FBTweakCollection.m in Sources */ = {isa = PBXBuildFile; fileRef = C6269C871FC4859F00F7B27A /* FBTweakCollection.m */; };
+		C6269CB61FC485C900F7B27A /* NSInvocation+EXT.m in Sources */ = {isa = PBXBuildFile; fileRef = C6269C9F1FC485C300F7B27A /* NSInvocation+EXT.m */; };
+		C6269CB71FC485C900F7B27A /* EXTNil.m in Sources */ = {isa = PBXBuildFile; fileRef = C6269CA21FC485C400F7B27A /* EXTNil.m */; };
+		C6269CB81FC485C900F7B27A /* EXTRuntimeExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = C6269CA41FC485C500F7B27A /* EXTRuntimeExtensions.m */; };
+		C6269CB91FC485C900F7B27A /* EXTSafeCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = C6269CA51FC485C500F7B27A /* EXTSafeCategory.m */; };
+		C6269CBA1FC485C900F7B27A /* NSMethodSignature+EXT.m in Sources */ = {isa = PBXBuildFile; fileRef = C6269CA91FC485C600F7B27A /* NSMethodSignature+EXT.m */; };
+		C6269CBB1FC485C900F7B27A /* EXTConcreteProtocol.m in Sources */ = {isa = PBXBuildFile; fileRef = C6269CB01FC485C700F7B27A /* EXTConcreteProtocol.m */; };
+		C6269CBC1FC485C900F7B27A /* EXTSelectorChecking.m in Sources */ = {isa = PBXBuildFile; fileRef = C6269CB21FC485C800F7B27A /* EXTSelectorChecking.m */; };
+		C6269CBD1FC485C900F7B27A /* EXTScope.m in Sources */ = {isa = PBXBuildFile; fileRef = C6269CB41FC485C800F7B27A /* EXTScope.m */; };
+		C6269CBE1FC485C900F7B27A /* EXTADT.m in Sources */ = {isa = PBXBuildFile; fileRef = C6269CB51FC485C800F7B27A /* EXTADT.m */; };
+		C6269CC31FC4882400F7B27A /* UIView+WBTSizes.m in Sources */ = {isa = PBXBuildFile; fileRef = C6269CC21FC4882400F7B27A /* UIView+WBTSizes.m */; };
 		C66653C41FBC9F600009F30C /* BeansGenerator.m in Sources */ = {isa = PBXBuildFile; fileRef = C66653C31FBC9F600009F30C /* BeansGenerator.m */; };
 		C66653C71FBC9FC20009F30C /* BeanView.m in Sources */ = {isa = PBXBuildFile; fileRef = C66653C61FBC9FC20009F30C /* BeanView.m */; };
 		C66653CA1FBCA14C0009F30C /* BeanNormalBeanView.m in Sources */ = {isa = PBXBuildFile; fileRef = C66653C91FBCA14C0009F30C /* BeanNormalBeanView.m */; };
@@ -28,6 +64,86 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		C622EB601FC46FE800EA2EAC /* BeanScoreView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BeanScoreView.h; sourceTree = "<group>"; };
+		C622EB611FC46FE800EA2EAC /* BeanScoreView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BeanScoreView.m; sourceTree = "<group>"; };
+		C622EB631FC4705900EA2EAC /* BeanGameResource.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BeanGameResource.h; sourceTree = "<group>"; };
+		C622EB641FC4705900EA2EAC /* BeanGameResource.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BeanGameResource.m; sourceTree = "<group>"; };
+		C6269C511FC4757600F7B27A /* BeanAnimatedCountView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BeanAnimatedCountView.h; sourceTree = "<group>"; };
+		C6269C521FC4757600F7B27A /* BeanAnimatedCountView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BeanAnimatedCountView.m; sourceTree = "<group>"; };
+		C6269C541FC4821C00F7B27A /* BeanNoAnimationLayer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BeanNoAnimationLayer.h; sourceTree = "<group>"; };
+		C6269C551FC4821C00F7B27A /* BeanNoAnimationLayer.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BeanNoAnimationLayer.m; sourceTree = "<group>"; };
+		C6269C591FC4859700F7B27A /* _FBTweakDictionaryViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = _FBTweakDictionaryViewController.m; sourceTree = "<group>"; };
+		C6269C5A1FC4859700F7B27A /* _FBKeyboardManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = _FBKeyboardManager.h; sourceTree = "<group>"; };
+		C6269C5B1FC4859700F7B27A /* _FBTweakCollectionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = _FBTweakCollectionViewController.h; sourceTree = "<group>"; };
+		C6269C5C1FC4859700F7B27A /* _FBTweakCollectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = _FBTweakCollectionViewController.m; sourceTree = "<group>"; };
+		C6269C5D1FC4859700F7B27A /* _FBColorWheelCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = _FBColorWheelCell.m; sourceTree = "<group>"; };
+		C6269C5E1FC4859700F7B27A /* FBTweakCategory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FBTweakCategory.h; sourceTree = "<group>"; };
+		C6269C5F1FC4859700F7B27A /* _FBTweakCategoryViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = _FBTweakCategoryViewController.m; sourceTree = "<group>"; };
+		C6269C601FC4859700F7B27A /* FBTweakStore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FBTweakStore.h; sourceTree = "<group>"; };
+		C6269C611FC4859800F7B27A /* _FBColorUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = _FBColorUtils.m; sourceTree = "<group>"; };
+		C6269C621FC4859800F7B27A /* FBTweakCategory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FBTweakCategory.m; sourceTree = "<group>"; };
+		C6269C631FC4859800F7B27A /* _FBTweakTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = _FBTweakTableViewCell.h; sourceTree = "<group>"; };
+		C6269C641FC4859800F7B27A /* _FBTweakBindObserver.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = _FBTweakBindObserver.m; sourceTree = "<group>"; };
+		C6269C651FC4859800F7B27A /* _FBTweakColorViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = _FBTweakColorViewController.m; sourceTree = "<group>"; };
+		C6269C661FC4859800F7B27A /* FBTweakShakeWindow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FBTweakShakeWindow.h; sourceTree = "<group>"; };
+		C6269C671FC4859800F7B27A /* FBTweakCollection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FBTweakCollection.h; sourceTree = "<group>"; };
+		C6269C681FC4859800F7B27A /* FBTweakInline.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FBTweakInline.h; sourceTree = "<group>"; };
+		C6269C691FC4859900F7B27A /* FBTweakStore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FBTweakStore.m; sourceTree = "<group>"; };
+		C6269C6A1FC4859900F7B27A /* _FBColorUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = _FBColorUtils.h; sourceTree = "<group>"; };
+		C6269C6B1FC4859900F7B27A /* FBTweakViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FBTweakViewController.h; sourceTree = "<group>"; };
+		C6269C6C1FC4859900F7B27A /* _FBTweakColorViewControllerDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = _FBTweakColorViewControllerDataSource.h; sourceTree = "<group>"; };
+		C6269C6D1FC4859A00F7B27A /* _FBColorWheelCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = _FBColorWheelCell.h; sourceTree = "<group>"; };
+		C6269C6E1FC4859A00F7B27A /* _FBTweakColorViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = _FBTweakColorViewController.h; sourceTree = "<group>"; };
+		C6269C6F1FC4859A00F7B27A /* _FBColorComponentCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = _FBColorComponentCell.m; sourceTree = "<group>"; };
+		C6269C701FC4859A00F7B27A /* _FBTweakBindObserver.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = _FBTweakBindObserver.h; sourceTree = "<group>"; };
+		C6269C711FC4859A00F7B27A /* _FBSliderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = _FBSliderView.m; sourceTree = "<group>"; };
+		C6269C721FC4859A00F7B27A /* _FBKeyboardManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = _FBKeyboardManager.m; sourceTree = "<group>"; };
+		C6269C731FC4859B00F7B27A /* _FBTweakArrayViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = _FBTweakArrayViewController.h; sourceTree = "<group>"; };
+		C6269C741FC4859B00F7B27A /* _FBColorComponentCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = _FBColorComponentCell.h; sourceTree = "<group>"; };
+		C6269C751FC4859B00F7B27A /* _FBTweakArrayViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = _FBTweakArrayViewController.m; sourceTree = "<group>"; };
+		C6269C761FC4859B00F7B27A /* _FBTweakTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = _FBTweakTableViewCell.m; sourceTree = "<group>"; };
+		C6269C771FC4859B00F7B27A /* FBTweak.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FBTweak.m; sourceTree = "<group>"; };
+		C6269C781FC4859B00F7B27A /* FBTweakEnabled.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FBTweakEnabled.h; sourceTree = "<group>"; };
+		C6269C791FC4859C00F7B27A /* FBTweakInline.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FBTweakInline.m; sourceTree = "<group>"; };
+		C6269C7A1FC4859C00F7B27A /* _FBTweakColorViewControllerHexDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = _FBTweakColorViewControllerHexDataSource.h; sourceTree = "<group>"; };
+		C6269C7B1FC4859C00F7B27A /* _FBSliderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = _FBSliderView.h; sourceTree = "<group>"; };
+		C6269C7C1FC4859C00F7B27A /* FBTweakShakeWindow.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FBTweakShakeWindow.m; sourceTree = "<group>"; };
+		C6269C7D1FC4859C00F7B27A /* _FBTweakColorViewControllerHSBDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = _FBTweakColorViewControllerHSBDataSource.h; sourceTree = "<group>"; };
+		C6269C7E1FC4859C00F7B27A /* FBTweakViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FBTweakViewController.m; sourceTree = "<group>"; };
+		C6269C7F1FC4859D00F7B27A /* _FBTweakCategoryViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = _FBTweakCategoryViewController.h; sourceTree = "<group>"; };
+		C6269C801FC4859D00F7B27A /* _FBTweakColorViewControllerRGBDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = _FBTweakColorViewControllerRGBDataSource.h; sourceTree = "<group>"; };
+		C6269C811FC4859D00F7B27A /* FBTweakInlineInternal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FBTweakInlineInternal.h; sourceTree = "<group>"; };
+		C6269C821FC4859D00F7B27A /* _FBTweakColorViewControllerHSBDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = _FBTweakColorViewControllerHSBDataSource.m; sourceTree = "<group>"; };
+		C6269C831FC4859E00F7B27A /* _FBTweakColorViewControllerHexDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = _FBTweakColorViewControllerHexDataSource.m; sourceTree = "<group>"; };
+		C6269C841FC4859E00F7B27A /* FBTweak.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FBTweak.h; sourceTree = "<group>"; };
+		C6269C851FC4859E00F7B27A /* _FBTweakDictionaryViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = _FBTweakDictionaryViewController.h; sourceTree = "<group>"; };
+		C6269C861FC4859F00F7B27A /* _FBTweakColorViewControllerRGBDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = _FBTweakColorViewControllerRGBDataSource.m; sourceTree = "<group>"; };
+		C6269C871FC4859F00F7B27A /* FBTweakCollection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FBTweakCollection.m; sourceTree = "<group>"; };
+		C6269C9F1FC485C300F7B27A /* NSInvocation+EXT.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSInvocation+EXT.m"; sourceTree = "<group>"; };
+		C6269CA01FC485C300F7B27A /* extobjc.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = extobjc.h; sourceTree = "<group>"; };
+		C6269CA11FC485C300F7B27A /* EXTCoroutine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EXTCoroutine.h; sourceTree = "<group>"; };
+		C6269CA21FC485C400F7B27A /* EXTNil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EXTNil.m; sourceTree = "<group>"; };
+		C6269CA31FC485C400F7B27A /* NSMethodSignature+EXT.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSMethodSignature+EXT.h"; sourceTree = "<group>"; };
+		C6269CA41FC485C500F7B27A /* EXTRuntimeExtensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EXTRuntimeExtensions.m; sourceTree = "<group>"; };
+		C6269CA51FC485C500F7B27A /* EXTSafeCategory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EXTSafeCategory.m; sourceTree = "<group>"; };
+		C6269CA61FC485C600F7B27A /* EXTScope.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EXTScope.h; sourceTree = "<group>"; };
+		C6269CA71FC485C600F7B27A /* NSInvocation+EXT.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSInvocation+EXT.h"; sourceTree = "<group>"; };
+		C6269CA81FC485C600F7B27A /* EXTNil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EXTNil.h; sourceTree = "<group>"; };
+		C6269CA91FC485C600F7B27A /* NSMethodSignature+EXT.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSMethodSignature+EXT.m"; sourceTree = "<group>"; };
+		C6269CAA1FC485C600F7B27A /* EXTSynthesize.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EXTSynthesize.h; sourceTree = "<group>"; };
+		C6269CAB1FC485C600F7B27A /* EXTRuntimeExtensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EXTRuntimeExtensions.h; sourceTree = "<group>"; };
+		C6269CAC1FC485C600F7B27A /* metamacros.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = metamacros.h; sourceTree = "<group>"; };
+		C6269CAD1FC485C600F7B27A /* EXTADT.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EXTADT.h; sourceTree = "<group>"; };
+		C6269CAE1FC485C700F7B27A /* EXTSelectorChecking.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EXTSelectorChecking.h; sourceTree = "<group>"; };
+		C6269CAF1FC485C700F7B27A /* EXTKeyPathCoding.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EXTKeyPathCoding.h; sourceTree = "<group>"; };
+		C6269CB01FC485C700F7B27A /* EXTConcreteProtocol.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EXTConcreteProtocol.m; sourceTree = "<group>"; };
+		C6269CB11FC485C800F7B27A /* EXTConcreteProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EXTConcreteProtocol.h; sourceTree = "<group>"; };
+		C6269CB21FC485C800F7B27A /* EXTSelectorChecking.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EXTSelectorChecking.m; sourceTree = "<group>"; };
+		C6269CB31FC485C800F7B27A /* EXTSafeCategory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EXTSafeCategory.h; sourceTree = "<group>"; };
+		C6269CB41FC485C800F7B27A /* EXTScope.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EXTScope.m; sourceTree = "<group>"; };
+		C6269CB51FC485C800F7B27A /* EXTADT.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EXTADT.m; sourceTree = "<group>"; };
+		C6269CC11FC4882400F7B27A /* UIView+WBTSizes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+WBTSizes.h"; sourceTree = "<group>"; };
+		C6269CC21FC4882400F7B27A /* UIView+WBTSizes.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+WBTSizes.m"; sourceTree = "<group>"; };
 		C66653C21FBC9F600009F30C /* BeansGenerator.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BeansGenerator.h; sourceTree = "<group>"; };
 		C66653C31FBC9F600009F30C /* BeansGenerator.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BeansGenerator.m; sourceTree = "<group>"; };
 		C66653C51FBC9FC20009F30C /* BeanView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BeanView.h; sourceTree = "<group>"; };
@@ -80,6 +196,109 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		C6269C571FC4853B00F7B27A /* Vendors */ = {
+			isa = PBXGroup;
+			children = (
+				C6269CC01FC487FD00F7B27A /* Weibo */,
+				C6269C9E1FC485A900F7B27A /* EXTObjc */,
+				C6269C581FC4858600F7B27A /* FBTweak */,
+			);
+			path = Vendors;
+			sourceTree = "<group>";
+		};
+		C6269C581FC4858600F7B27A /* FBTweak */ = {
+			isa = PBXGroup;
+			children = (
+				C6269C741FC4859B00F7B27A /* _FBColorComponentCell.h */,
+				C6269C6F1FC4859A00F7B27A /* _FBColorComponentCell.m */,
+				C6269C6A1FC4859900F7B27A /* _FBColorUtils.h */,
+				C6269C611FC4859800F7B27A /* _FBColorUtils.m */,
+				C6269C6D1FC4859A00F7B27A /* _FBColorWheelCell.h */,
+				C6269C5D1FC4859700F7B27A /* _FBColorWheelCell.m */,
+				C6269C5A1FC4859700F7B27A /* _FBKeyboardManager.h */,
+				C6269C721FC4859A00F7B27A /* _FBKeyboardManager.m */,
+				C6269C7B1FC4859C00F7B27A /* _FBSliderView.h */,
+				C6269C711FC4859A00F7B27A /* _FBSliderView.m */,
+				C6269C731FC4859B00F7B27A /* _FBTweakArrayViewController.h */,
+				C6269C751FC4859B00F7B27A /* _FBTweakArrayViewController.m */,
+				C6269C701FC4859A00F7B27A /* _FBTweakBindObserver.h */,
+				C6269C641FC4859800F7B27A /* _FBTweakBindObserver.m */,
+				C6269C7F1FC4859D00F7B27A /* _FBTweakCategoryViewController.h */,
+				C6269C5F1FC4859700F7B27A /* _FBTweakCategoryViewController.m */,
+				C6269C5B1FC4859700F7B27A /* _FBTweakCollectionViewController.h */,
+				C6269C5C1FC4859700F7B27A /* _FBTweakCollectionViewController.m */,
+				C6269C6E1FC4859A00F7B27A /* _FBTweakColorViewController.h */,
+				C6269C651FC4859800F7B27A /* _FBTweakColorViewController.m */,
+				C6269C6C1FC4859900F7B27A /* _FBTweakColorViewControllerDataSource.h */,
+				C6269C7A1FC4859C00F7B27A /* _FBTweakColorViewControllerHexDataSource.h */,
+				C6269C831FC4859E00F7B27A /* _FBTweakColorViewControllerHexDataSource.m */,
+				C6269C7D1FC4859C00F7B27A /* _FBTweakColorViewControllerHSBDataSource.h */,
+				C6269C821FC4859D00F7B27A /* _FBTweakColorViewControllerHSBDataSource.m */,
+				C6269C801FC4859D00F7B27A /* _FBTweakColorViewControllerRGBDataSource.h */,
+				C6269C861FC4859F00F7B27A /* _FBTweakColorViewControllerRGBDataSource.m */,
+				C6269C851FC4859E00F7B27A /* _FBTweakDictionaryViewController.h */,
+				C6269C591FC4859700F7B27A /* _FBTweakDictionaryViewController.m */,
+				C6269C631FC4859800F7B27A /* _FBTweakTableViewCell.h */,
+				C6269C761FC4859B00F7B27A /* _FBTweakTableViewCell.m */,
+				C6269C841FC4859E00F7B27A /* FBTweak.h */,
+				C6269C771FC4859B00F7B27A /* FBTweak.m */,
+				C6269C5E1FC4859700F7B27A /* FBTweakCategory.h */,
+				C6269C621FC4859800F7B27A /* FBTweakCategory.m */,
+				C6269C671FC4859800F7B27A /* FBTweakCollection.h */,
+				C6269C871FC4859F00F7B27A /* FBTweakCollection.m */,
+				C6269C781FC4859B00F7B27A /* FBTweakEnabled.h */,
+				C6269C681FC4859800F7B27A /* FBTweakInline.h */,
+				C6269C791FC4859C00F7B27A /* FBTweakInline.m */,
+				C6269C811FC4859D00F7B27A /* FBTweakInlineInternal.h */,
+				C6269C661FC4859800F7B27A /* FBTweakShakeWindow.h */,
+				C6269C7C1FC4859C00F7B27A /* FBTweakShakeWindow.m */,
+				C6269C601FC4859700F7B27A /* FBTweakStore.h */,
+				C6269C691FC4859900F7B27A /* FBTweakStore.m */,
+				C6269C6B1FC4859900F7B27A /* FBTweakViewController.h */,
+				C6269C7E1FC4859C00F7B27A /* FBTweakViewController.m */,
+			);
+			path = FBTweak;
+			sourceTree = "<group>";
+		};
+		C6269C9E1FC485A900F7B27A /* EXTObjc */ = {
+			isa = PBXGroup;
+			children = (
+				C6269CAD1FC485C600F7B27A /* EXTADT.h */,
+				C6269CB51FC485C800F7B27A /* EXTADT.m */,
+				C6269CB11FC485C800F7B27A /* EXTConcreteProtocol.h */,
+				C6269CB01FC485C700F7B27A /* EXTConcreteProtocol.m */,
+				C6269CA11FC485C300F7B27A /* EXTCoroutine.h */,
+				C6269CAF1FC485C700F7B27A /* EXTKeyPathCoding.h */,
+				C6269CA81FC485C600F7B27A /* EXTNil.h */,
+				C6269CA21FC485C400F7B27A /* EXTNil.m */,
+				C6269CA01FC485C300F7B27A /* extobjc.h */,
+				C6269CAB1FC485C600F7B27A /* EXTRuntimeExtensions.h */,
+				C6269CA41FC485C500F7B27A /* EXTRuntimeExtensions.m */,
+				C6269CB31FC485C800F7B27A /* EXTSafeCategory.h */,
+				C6269CA51FC485C500F7B27A /* EXTSafeCategory.m */,
+				C6269CA61FC485C600F7B27A /* EXTScope.h */,
+				C6269CB41FC485C800F7B27A /* EXTScope.m */,
+				C6269CAE1FC485C700F7B27A /* EXTSelectorChecking.h */,
+				C6269CB21FC485C800F7B27A /* EXTSelectorChecking.m */,
+				C6269CAA1FC485C600F7B27A /* EXTSynthesize.h */,
+				C6269CAC1FC485C600F7B27A /* metamacros.h */,
+				C6269CA71FC485C600F7B27A /* NSInvocation+EXT.h */,
+				C6269C9F1FC485C300F7B27A /* NSInvocation+EXT.m */,
+				C6269CA31FC485C400F7B27A /* NSMethodSignature+EXT.h */,
+				C6269CA91FC485C600F7B27A /* NSMethodSignature+EXT.m */,
+			);
+			path = EXTObjc;
+			sourceTree = "<group>";
+		};
+		C6269CC01FC487FD00F7B27A /* Weibo */ = {
+			isa = PBXGroup;
+			children = (
+				C6269CC11FC4882400F7B27A /* UIView+WBTSizes.h */,
+				C6269CC21FC4882400F7B27A /* UIView+WBTSizes.m */,
+			);
+			path = Weibo;
+			sourceTree = "<group>";
+		};
 		C6ACA5D91FB98FFE001D43A2 = {
 			isa = PBXGroup;
 			children = (
@@ -99,10 +318,15 @@
 		C6ACA5E41FB98FFE001D43A2 /* Beans */ = {
 			isa = PBXGroup;
 			children = (
+				C6269C571FC4853B00F7B27A /* Vendors */,
 				C6ACA5E51FB98FFE001D43A2 /* AppDelegate.h */,
 				C6ACA5E61FB98FFE001D43A2 /* AppDelegate.m */,
 				C6ACA5E81FB98FFF001D43A2 /* ViewController.h */,
 				C6ACA5E91FB98FFF001D43A2 /* ViewController.m */,
+				C6269C541FC4821C00F7B27A /* BeanNoAnimationLayer.h */,
+				C6269C551FC4821C00F7B27A /* BeanNoAnimationLayer.m */,
+				C622EB631FC4705900EA2EAC /* BeanGameResource.h */,
+				C622EB641FC4705900EA2EAC /* BeanGameResource.m */,
 				C681237B1FBDAAF5002D6C23 /* BeanGameDefines.h */,
 				C6ACA5FB1FB991D7001D43A2 /* BeanGameController.h */,
 				C6ACA5FC1FB991D7001D43A2 /* BeanGameController.m */,
@@ -122,6 +346,10 @@
 				C66653C31FBC9F600009F30C /* BeansGenerator.m */,
 				C66653C51FBC9FC20009F30C /* BeanView.h */,
 				C66653C61FBC9FC20009F30C /* BeanView.m */,
+				C622EB601FC46FE800EA2EAC /* BeanScoreView.h */,
+				C622EB611FC46FE800EA2EAC /* BeanScoreView.m */,
+				C6269C511FC4757600F7B27A /* BeanAnimatedCountView.h */,
+				C6269C521FC4757600F7B27A /* BeanAnimatedCountView.m */,
 				C68123781FBDA264002D6C23 /* BeanLayerContainerView.h */,
 				C68123791FBDA264002D6C23 /* BeanLayerContainerView.m */,
 				C68123761FBD4AF2002D6C23 /* BeanView+Private.h */,
@@ -213,19 +441,55 @@
 			buildActionMask = 2147483647;
 			files = (
 				C66653C71FBC9FC20009F30C /* BeanView.m in Sources */,
+				C6269CBE1FC485C900F7B27A /* EXTADT.m in Sources */,
+				C6269C8A1FC4859F00F7B27A /* _FBColorWheelCell.m in Sources */,
+				C6269C561FC4821C00F7B27A /* BeanNoAnimationLayer.m in Sources */,
 				C6ACA5EA1FB98FFF001D43A2 /* ViewController.m in Sources */,
 				C66653C41FBC9F600009F30C /* BeansGenerator.m in Sources */,
+				C6269C531FC4757600F7B27A /* BeanAnimatedCountView.m in Sources */,
+				C6269C901FC4859F00F7B27A /* FBTweakStore.m in Sources */,
 				C6ACA5F51FB98FFF001D43A2 /* main.m in Sources */,
+				C6269CBB1FC485C900F7B27A /* EXTConcreteProtocol.m in Sources */,
+				C6269CBA1FC485C900F7B27A /* NSMethodSignature+EXT.m in Sources */,
+				C6269CB71FC485C900F7B27A /* EXTNil.m in Sources */,
+				C6269CC31FC4882400F7B27A /* UIView+WBTSizes.m in Sources */,
+				C622EB651FC4705900EA2EAC /* BeanGameResource.m in Sources */,
+				C6269C931FC4859F00F7B27A /* _FBKeyboardManager.m in Sources */,
+				C6269C891FC4859F00F7B27A /* _FBTweakCollectionViewController.m in Sources */,
+				C6269C951FC4859F00F7B27A /* _FBTweakTableViewCell.m in Sources */,
+				C6269C8C1FC4859F00F7B27A /* _FBColorUtils.m in Sources */,
+				C6269C911FC4859F00F7B27A /* _FBColorComponentCell.m in Sources */,
+				C6269CBD1FC485C900F7B27A /* EXTScope.m in Sources */,
 				C68123661FBC5A18002D6C23 /* BeanGamePhase.m in Sources */,
 				C66653CD1FBCA1580009F30C /* BeanLargeBeanView.m in Sources */,
 				C68123721FBC5A86002D6C23 /* BeanGameResultPhase.m in Sources */,
+				C622EB621FC46FE800EA2EAC /* BeanScoreView.m in Sources */,
 				C681237A1FBDA265002D6C23 /* BeanLayerContainerView.m in Sources */,
+				C6269C8E1FC4859F00F7B27A /* _FBTweakBindObserver.m in Sources */,
 				C68123691FBC5A2A002D6C23 /* BeanGamePhaseController.m in Sources */,
 				C66653D01FBCA1870009F30C /* BeanPooPooView.m in Sources */,
 				C6ACA5E71FB98FFE001D43A2 /* AppDelegate.m in Sources */,
+				C6269CB91FC485C900F7B27A /* EXTSafeCategory.m in Sources */,
+				C6269C991FC4859F00F7B27A /* FBTweakViewController.m in Sources */,
+				C6269C9B1FC4859F00F7B27A /* _FBTweakColorViewControllerHexDataSource.m in Sources */,
+				C6269C981FC4859F00F7B27A /* FBTweakShakeWindow.m in Sources */,
 				C6ACA5FD1FB991D7001D43A2 /* BeanGameController.m in Sources */,
 				C681236F1FBC5A4F002D6C23 /* BeanGamePlayingPhase.m in Sources */,
+				C6269C9C1FC4859F00F7B27A /* _FBTweakColorViewControllerRGBDataSource.m in Sources */,
+				C6269C881FC4859F00F7B27A /* _FBTweakDictionaryViewController.m in Sources */,
+				C6269C9A1FC4859F00F7B27A /* _FBTweakColorViewControllerHSBDataSource.m in Sources */,
+				C6269C961FC4859F00F7B27A /* FBTweak.m in Sources */,
+				C6269CB61FC485C900F7B27A /* NSInvocation+EXT.m in Sources */,
+				C6269C971FC4859F00F7B27A /* FBTweakInline.m in Sources */,
+				C6269C941FC4859F00F7B27A /* _FBTweakArrayViewController.m in Sources */,
+				C6269C9D1FC4859F00F7B27A /* FBTweakCollection.m in Sources */,
+				C6269C8F1FC4859F00F7B27A /* _FBTweakColorViewController.m in Sources */,
+				C6269C921FC4859F00F7B27A /* _FBSliderView.m in Sources */,
+				C6269C8D1FC4859F00F7B27A /* FBTweakCategory.m in Sources */,
 				C681236C1FBC5A3B002D6C23 /* BeanGameCountdownPhase.m in Sources */,
+				C6269C8B1FC4859F00F7B27A /* _FBTweakCategoryViewController.m in Sources */,
+				C6269CB81FC485C900F7B27A /* EXTRuntimeExtensions.m in Sources */,
+				C6269CBC1FC485C900F7B27A /* EXTSelectorChecking.m in Sources */,
 				C66653CA1FBCA14C0009F30C /* BeanNormalBeanView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

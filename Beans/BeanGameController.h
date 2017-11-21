@@ -14,5 +14,6 @@
 - (instancetype)initWithARSCNView:(ARSCNView *)scnView contentContainerView:(UIView *)contentView interfaceContainerView:(UIView *)interfaceView;
 
 - (void)start;
+- (void)stop;
 
 @end

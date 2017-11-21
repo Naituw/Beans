@@ -25,6 +25,7 @@ typedef NS_ENUM(NSInteger, BeanGamePhaseState) {
 @property (nonatomic, weak, readonly) UIView * contentView; // auto set by phase controller
 
 - (void)start;
+- (void)stop;
 
 @end
 
