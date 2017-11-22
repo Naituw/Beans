@@ -22,8 +22,6 @@
 
 - (void)_runPhase
 {
-    self.score = 18231;
-    
     [self.contentView addSubview:self.blurView];
     _blurView.frame = self.contentView.bounds;
     
