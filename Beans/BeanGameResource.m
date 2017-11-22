@@ -17,7 +17,7 @@
     dispatch_once(&onceToken, ^{
         NSMutableArray * a = [NSMutableArray arrayWithCapacity:10];
         for (NSInteger i = 0; i < 10; i++) {
-            [a addObject:[UIImage imageNamed:[NSString stringWithFormat:@"COMBO_%zd", i]]];
+            [a addObject:[UIImage imageNamed:[NSString stringWithFormat:@"soccer_number_%zd", i]]];
         }
         images = a;
     });
@@ -56,7 +56,7 @@
     dispatch_once(&onceToken, ^{
         NSMutableArray * a = [NSMutableArray arrayWithCapacity:10];
         for (NSInteger i = 0; i < 10; i++) {
-            [a addObject:[UIImage imageNamed:[NSString stringWithFormat:@"COMBO_%zd", i]]];
+            [a addObject:[UIImage imageNamed:[NSString stringWithFormat:@"soccer_number_final_%zd", i]]];
         }
         images = a;
     });

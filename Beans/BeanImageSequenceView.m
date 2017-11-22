@@ -59,7 +59,10 @@
         CGSize imageSize = image.size;
         size.height = MAX(size.height, imageSize.height);
         size.width += imageSize.width;
+        size.width += _imageMargin;
     }
+    
+    size.width -= _imageMargin;
     
     CGRect bounds = self.bounds;
     bounds.size = size;
@@ -82,6 +85,7 @@
         imageLayer.contents = (id)image.CGImage;
         imageLayer.frame = CGRectMake(baseX, (bounds.size.height - size.height) / 2, size.width, size.height);
         baseX += size.width;
+        baseX += _imageMargin;
     }
     
     while (_imageLayers.count > numbers.count) {

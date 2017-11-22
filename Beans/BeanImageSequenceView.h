@@ -12,6 +12,7 @@
 
 @property (nonatomic, strong) NSString * content;
 @property (nonatomic, assign, readonly) NSInteger sequenceLength;
+@property (nonatomic, assign) CGFloat imageMargin;
 
 - (UIImage *)imageForCharacter:(unichar)character; // for subclass
 

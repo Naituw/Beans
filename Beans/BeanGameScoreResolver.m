@@ -93,7 +93,7 @@
             if (hintView == _existingComboView) {
                 _existingComboView = nil;
             }
-            [UIView animateWithDuration:0.15 delay:0 options:UIViewAnimationOptionAllowUserInteraction animations:^{
+            [UIView animateWithDuration:0.2 delay:0 options:UIViewAnimationOptionAllowUserInteraction animations:^{
                 hintView.alpha = 0.0;
             } completion:^(BOOL finished) {
                 [hintView removeFromSuperview];

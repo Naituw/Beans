@@ -42,6 +42,7 @@
 {
     if (!_countView) {
         _countView = [[BeanAnimatedCountView alloc] initWithNumberImages:[BeanGameResource scoreNumberImages]];
+        _countView.imageMargin = -6;
         @weakify(self);
         [_countView setUpdateBlock:^{
             @strongify(self);
@@ -101,7 +102,7 @@
     _beanIconView.wbtRight = self.wbtWidth - 10;
     _beanIconView.wbtBottom = self.wbtHeight - 12;
     _countView.wbtCenterX = 10 + (self.wbtWidth - 60) / 2;
-    _countView.wbtBottom = self.wbtHeight - 5;
+    _countView.wbtBottom = self.wbtHeight - 7;
 }
 
 - (void)setScore:(NSInteger)score
