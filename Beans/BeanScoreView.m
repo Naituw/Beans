@@ -112,6 +112,7 @@
         
         NSInteger delta = ABS(score - (NSInteger)_countView.presentationCount);
         NSTimeInterval duration = 1.0 * ((double)delta / 1000.0);
+        duration = MIN(duration, 1);
         [_countView setCount:score animateDuration:duration];
     }
 }

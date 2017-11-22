@@ -8,27 +8,28 @@
 
 #import "BeanLargeBeanView.h"
 #import "BeanView+SubClass.h"
+#import "BeanGameDefines.h"
 
 @implementation BeanLargeBeanView
 
 + (NSString *)imageName
 {
-    return @"orange_normal";
+    return @"orange_normal_big";
 }
 
 + (NSString *)bittenImageName
 {
-    return @"orange_eat";
+    return @"orange_eat_big";
 }
 
 + (CGSize)defaultSize
 {
-    return CGSizeMake(60, 60);
+    return CGSizeMake(BeanGameBeanLargeSize, BeanGameBeanLargeSize);
 }
 
 - (NSInteger)score
 {
-    return 200;
+    return BeanGameLargeBeanScore;
 }
 
 @end

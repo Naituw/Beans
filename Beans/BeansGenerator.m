@@ -11,6 +11,7 @@
 #import "BeanLargeBeanView.h"
 #import "BeanPooPooView.h"
 #import "BeanView+Private.h"
+#import "BeanGameDefines.h"
 
 @interface BeanView (Chance)
 
@@ -86,10 +87,10 @@
                 [self _createBean];
             }
             
-            CFTimeInterval minBeanInterval = 0.25;
-            CFTimeInterval maxBeanInterval = 0.6;
+            CFTimeInterval minBeanInterval = 1.0 / BeanGameBeanMaxBeansPerSecond;
+            CFTimeInterval maxBeanInterval = 1.0 / BeanGameBeanMinBeansPerSecond;
             CFTimeInterval maxBeanIntervalTime = 0;
-            CFTimeInterval minBeanIntervalTime = 8;
+            CFTimeInterval minBeanIntervalTime = BeanGameBeanGeneratorSpeedUpDuration;
             
             CFTimeInterval nextBeanInterval = MAX(((minBeanIntervalTime - _timeElapsed) / (minBeanIntervalTime - maxBeanIntervalTime)) * (maxBeanInterval - minBeanInterval), 0) + minBeanInterval;
             _nextBeanTime = currentTime + nextBeanInterval;
@@ -163,7 +164,7 @@
 
 - (void)_updateBeans
 {
-    double accRatePerSec = 180;
+    double accRatePerSec = BeanGameBeanAccelerationRate;
     CFTimeInterval now = CFAbsoluteTimeGetCurrent();
     
     [CATransaction begin];
@@ -196,8 +197,8 @@
 + (NSInteger)chance { return __CHANCE__;} \
 @end
 
-DefineChance(BeanNormalBeanView, 8)
-DefineChance(BeanLargeBeanView, 2)
-DefineChance(BeanPooPooView, 5)
+DefineChance(BeanNormalBeanView, BeanGameNormalBeanChance)
+DefineChance(BeanLargeBeanView, BeanGameLargeBeanChance)
+DefineChance(BeanPooPooView, BeanGamePooChance)
 
 #undef DefineChance

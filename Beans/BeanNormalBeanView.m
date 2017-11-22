@@ -8,6 +8,7 @@
 
 #import "BeanNormalBeanView.h"
 #import "BeanView+SubClass.h"
+#import "BeanGameDefines.h"
 
 @implementation BeanNormalBeanView
 
@@ -21,9 +22,14 @@
     return @"orange_eat";
 }
 
++ (CGSize)defaultSize
+{
+    return CGSizeMake(BeanGameBeanNormalSize, BeanGameBeanNormalSize);
+}
+
 - (NSInteger)score
 {
-    return 100;
+    return BeanGameNormalBeanScore;
 }
 
 @end

@@ -21,7 +21,6 @@
 
 @property (nonatomic, strong) CADisplayLink * displayLink;
 @property (nonatomic, strong) NSArray * numberImages;
-@property (nonatomic, strong) NSMutableArray * imageLayers;
 
 @end
 
@@ -32,7 +31,7 @@
     if (self = [self initWithFrame:CGRectZero]) {
         self.numberImages = numberImages;
         _count = 0;
-        _imageLayers = [NSMutableArray array];
+        
         [self _updateDisplay];
     }
     return self;
@@ -72,56 +71,23 @@
     }
 }
 
+- (UIImage *)imageForCharacter:(unichar)character
+{
+    NSUInteger number = character - 48;
+    number = MIN(number, 9);
+    UIImage * image = _numberImages[number];
+    return image;
+}
+
+- (NSUInteger)digitCount
+{
+    return self.sequenceLength;
+}
+
 - (void)_updateDisplay
 {
     NSString * displayString = [NSString stringWithFormat:@"%zd", _animate.currentCount];
-    NSUInteger length = displayString.length;
-    NSMutableArray * numbers = [NSMutableArray array];
-    CGSize size = CGSizeZero;
-    for (NSInteger index = 0; index < length; index++) {
-        unichar character = [displayString characterAtIndex:index];
-        NSUInteger number = character - 48;
-        number = MIN(number, 9);
-        UIImage * image = _numberImages[number];
-        [numbers addObject:image];
-        
-        CGSize imageSize = image.size;
-        size.height = MAX(size.height, imageSize.height);
-        size.width += imageSize.width;
-    }
-    
-    CGRect bounds = self.bounds;
-    bounds.size = size;
-    self.bounds = bounds;
-    
-    length = numbers.count;
-    _digitCount = length;
-    CGFloat baseX = 0;
-    for (NSInteger i = 0; i < length; i++) {
-        CALayer * imageLayer = nil;
-        if (i < _imageLayers.count) {
-            imageLayer = _imageLayers[i];
-        } else {
-            imageLayer = [BeanNoAnimationLayer layer];
-            [_imageLayers addObject:imageLayer];
-            [self.layer addSublayer:imageLayer];
-        }
-        UIImage * image = numbers[i];
-        CGSize size = image.size;
-        imageLayer.contents = (id)image.CGImage;
-        imageLayer.frame = CGRectMake(baseX, (bounds.size.height - size.height) / 2, size.width, size.height);
-        baseX += size.width;
-    }
-    
-    while (_imageLayers.count > numbers.count) {
-        CALayer * layer = _imageLayers.lastObject;
-        [layer removeFromSuperlayer];
-        [_imageLayers removeLastObject];
-    }
-    
-    if (_updateBlock) {
-        _updateBlock();
-    }
+    self.content = displayString;
 }
 
 - (void)_updateAnimation

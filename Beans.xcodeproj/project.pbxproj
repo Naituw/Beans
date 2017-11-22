@@ -48,6 +48,9 @@
 		C66653CA1FBCA14C0009F30C /* BeanNormalBeanView.m in Sources */ = {isa = PBXBuildFile; fileRef = C66653C91FBCA14C0009F30C /* BeanNormalBeanView.m */; };
 		C66653CD1FBCA1580009F30C /* BeanLargeBeanView.m in Sources */ = {isa = PBXBuildFile; fileRef = C66653CC1FBCA1580009F30C /* BeanLargeBeanView.m */; };
 		C66653D01FBCA1870009F30C /* BeanPooPooView.m in Sources */ = {isa = PBXBuildFile; fileRef = C66653CF1FBCA1870009F30C /* BeanPooPooView.m */; };
+		C6789CE81FC5272B003E8947 /* BeanGameScoreResolver.m in Sources */ = {isa = PBXBuildFile; fileRef = C6789CE71FC5272B003E8947 /* BeanGameScoreResolver.m */; };
+		C6789CEC1FC53087003E8947 /* BeanImageSequenceView.m in Sources */ = {isa = PBXBuildFile; fileRef = C6789CEB1FC53087003E8947 /* BeanImageSequenceView.m */; };
+		C6789CEF1FC54A4A003E8947 /* BeanGameScoreHintView.m in Sources */ = {isa = PBXBuildFile; fileRef = C6789CEE1FC54A4A003E8947 /* BeanGameScoreHintView.m */; };
 		C68123661FBC5A18002D6C23 /* BeanGamePhase.m in Sources */ = {isa = PBXBuildFile; fileRef = C68123651FBC5A18002D6C23 /* BeanGamePhase.m */; };
 		C68123691FBC5A2A002D6C23 /* BeanGamePhaseController.m in Sources */ = {isa = PBXBuildFile; fileRef = C68123681FBC5A2A002D6C23 /* BeanGamePhaseController.m */; };
 		C681236C1FBC5A3B002D6C23 /* BeanGameCountdownPhase.m in Sources */ = {isa = PBXBuildFile; fileRef = C681236B1FBC5A3B002D6C23 /* BeanGameCountdownPhase.m */; };
@@ -155,6 +158,12 @@
 		C66653CE1FBCA1870009F30C /* BeanPooPooView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BeanPooPooView.h; sourceTree = "<group>"; };
 		C66653CF1FBCA1870009F30C /* BeanPooPooView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BeanPooPooView.m; sourceTree = "<group>"; };
 		C66653D11FBCA7720009F30C /* BeanView+SubClass.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "BeanView+SubClass.h"; sourceTree = "<group>"; };
+		C6789CE61FC5272B003E8947 /* BeanGameScoreResolver.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BeanGameScoreResolver.h; sourceTree = "<group>"; };
+		C6789CE71FC5272B003E8947 /* BeanGameScoreResolver.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BeanGameScoreResolver.m; sourceTree = "<group>"; };
+		C6789CEA1FC53087003E8947 /* BeanImageSequenceView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BeanImageSequenceView.h; sourceTree = "<group>"; };
+		C6789CEB1FC53087003E8947 /* BeanImageSequenceView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BeanImageSequenceView.m; sourceTree = "<group>"; };
+		C6789CED1FC54A4A003E8947 /* BeanGameScoreHintView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BeanGameScoreHintView.h; sourceTree = "<group>"; };
+		C6789CEE1FC54A4A003E8947 /* BeanGameScoreHintView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BeanGameScoreHintView.m; sourceTree = "<group>"; };
 		C68123641FBC5A18002D6C23 /* BeanGamePhase.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BeanGamePhase.h; sourceTree = "<group>"; };
 		C68123651FBC5A18002D6C23 /* BeanGamePhase.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BeanGamePhase.m; sourceTree = "<group>"; };
 		C68123671FBC5A2A002D6C23 /* BeanGamePhaseController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BeanGamePhaseController.h; sourceTree = "<group>"; };
@@ -344,12 +353,18 @@
 				C68123711FBC5A86002D6C23 /* BeanGameResultPhase.m */,
 				C66653C21FBC9F600009F30C /* BeansGenerator.h */,
 				C66653C31FBC9F600009F30C /* BeansGenerator.m */,
+				C6789CE61FC5272B003E8947 /* BeanGameScoreResolver.h */,
+				C6789CE71FC5272B003E8947 /* BeanGameScoreResolver.m */,
+				C6789CED1FC54A4A003E8947 /* BeanGameScoreHintView.h */,
+				C6789CEE1FC54A4A003E8947 /* BeanGameScoreHintView.m */,
 				C66653C51FBC9FC20009F30C /* BeanView.h */,
 				C66653C61FBC9FC20009F30C /* BeanView.m */,
 				C622EB601FC46FE800EA2EAC /* BeanScoreView.h */,
 				C622EB611FC46FE800EA2EAC /* BeanScoreView.m */,
 				C6269C511FC4757600F7B27A /* BeanAnimatedCountView.h */,
 				C6269C521FC4757600F7B27A /* BeanAnimatedCountView.m */,
+				C6789CEA1FC53087003E8947 /* BeanImageSequenceView.h */,
+				C6789CEB1FC53087003E8947 /* BeanImageSequenceView.m */,
 				C68123781FBDA264002D6C23 /* BeanLayerContainerView.h */,
 				C68123791FBDA264002D6C23 /* BeanLayerContainerView.m */,
 				C68123761FBD4AF2002D6C23 /* BeanView+Private.h */,
@@ -466,6 +481,7 @@
 				C622EB621FC46FE800EA2EAC /* BeanScoreView.m in Sources */,
 				C681237A1FBDA265002D6C23 /* BeanLayerContainerView.m in Sources */,
 				C6269C8E1FC4859F00F7B27A /* _FBTweakBindObserver.m in Sources */,
+				C6789CEF1FC54A4A003E8947 /* BeanGameScoreHintView.m in Sources */,
 				C68123691FBC5A2A002D6C23 /* BeanGamePhaseController.m in Sources */,
 				C66653D01FBCA1870009F30C /* BeanPooPooView.m in Sources */,
 				C6ACA5E71FB98FFE001D43A2 /* AppDelegate.m in Sources */,
@@ -484,10 +500,12 @@
 				C6269C941FC4859F00F7B27A /* _FBTweakArrayViewController.m in Sources */,
 				C6269C9D1FC4859F00F7B27A /* FBTweakCollection.m in Sources */,
 				C6269C8F1FC4859F00F7B27A /* _FBTweakColorViewController.m in Sources */,
+				C6789CE81FC5272B003E8947 /* BeanGameScoreResolver.m in Sources */,
 				C6269C921FC4859F00F7B27A /* _FBSliderView.m in Sources */,
 				C6269C8D1FC4859F00F7B27A /* FBTweakCategory.m in Sources */,
 				C681236C1FBC5A3B002D6C23 /* BeanGameCountdownPhase.m in Sources */,
 				C6269C8B1FC4859F00F7B27A /* _FBTweakCategoryViewController.m in Sources */,
+				C6789CEC1FC53087003E8947 /* BeanImageSequenceView.m in Sources */,
 				C6269CB81FC485C900F7B27A /* EXTRuntimeExtensions.m in Sources */,
 				C6269CBC1FC485C900F7B27A /* EXTSelectorChecking.m in Sources */,
 				C66653CA1FBCA14C0009F30C /* BeanNormalBeanView.m in Sources */,

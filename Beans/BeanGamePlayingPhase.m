@@ -16,16 +16,21 @@
 #import "BeanScoreView.h"
 #import "BeanScoreView.h"
 #import "BeanGameResource.h"
+#import "BeanGameScoreResolver.h"
 #import "EXTScope.h"
 #import "UIView+WBTSizes.h"
 
 @interface BeanGamePlayingPhase ()
 
 @property (nonatomic, strong) BeansGenerator * generator;
+@property (nonatomic, strong) BeanGameScoreResolver * scoreResolver;
 @property (nonatomic, assign) CGPoint leftMouthPoint;
 @property (nonatomic, assign) CGPoint rightMouthPoint;
 @property (nonatomic, assign) CFTimeInterval mostRecentBiteTime;
+@property (nonatomic, strong) UIView * beansContainerView;
 @property (nonatomic, strong) BeanScoreView * scoreView;
+@property (nonatomic, assign) NSInteger score;
+@property (nonatomic, strong) UITapGestureRecognizer * simulatorTapGesture;
 
 @end
 
@@ -38,8 +43,21 @@
     return self;
 }
 
+- (void)setScore:(NSInteger)score
+{
+    if (_score != score) {
+        _score = score;
+        
+        _scoreView.score = score;
+    }
+}
+
 - (void)_gameWillStart
 {
+    _beansContainerView = [[UIView alloc] initWithFrame:self.contentView.bounds];
+    _beansContainerView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
+    [self.contentView addSubview:_beansContainerView];
+    
     _scoreView = [[BeanScoreView alloc] init];
     @weakify(self);
     [_scoreView setSizeUpdateBlock:^{
@@ -54,14 +72,27 @@
 - (void)layout
 {
     _scoreView.wbtRight = self.contentView.wbtWidth - 15;
-    _scoreView.wbtTop = 10 + 22;
+    _scoreView.wbtTop = 10 + self.contentView.safeAreaInsets.top;
 }
 
 - (void)_runPhase
 {
     NSLog(@"Start Playing");
     
-    _generator = [[BeansGenerator alloc] initWithContentView:self.contentView];
+    if (BeanGameTouchEnabled) {
+        if (!_simulatorTapGesture) {
+            _simulatorTapGesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tapGestureRecognized:)];
+            _simulatorTapGesture.numberOfTapsRequired = 1;
+            [self.contentView addGestureRecognizer:_simulatorTapGesture];
+        }
+    }
+    
+    _scoreResolver = [[BeanGameScoreResolver alloc] initWithContentView:self.contentView];
+    
+    _generator = [[BeansGenerator alloc] initWithContentView:self.beansContainerView];
+    
+    CGFloat distance = self.contentView.wbtHeight + BeanGameBeanLargeSize;
+    NSTimeInterval timeFromTopToBottom = sqrt(2 * distance / BeanGameBeanAccelerationRate);
     
     __weak typeof(self) weakSelf = self;
     [_generator setUpdateBlock:^{
@@ -73,7 +104,7 @@
         BeansGenerator * gen = this.generator;
         NSTimeInterval timeElapsed = gen.timeElapsed;
         
-        if (timeElapsed > (BeanGameDuration - 4)) {
+        if (timeElapsed > (BeanGameDuration - timeFromTopToBottom)) {
             [gen stopGenerating];
         }
         
@@ -114,12 +145,31 @@
 - (void)_biteBeans:(NSArray<BeanView *> *)beans
 {
     NSMutableArray<BeanLayerContainerView *> * containerViews = [NSMutableArray array];
+    
+    NSInteger positiveScore = 0;
+    NSInteger negativeScore = 0;
+    
     for (BeanView * beanView in beans) {
         BeanLayerContainerView * containerView = [[BeanLayerContainerView alloc] initWithBeanView:beanView];
         [self.contentView addSubview:containerView];
         [beanView bite];
         [containerViews addObject:containerView];
+        
+        NSInteger score = beanView.score;
+        if (score > 0) {
+            positiveScore += score;
+        } else {
+            negativeScore += score;
+        }
     }
+    
+    if (negativeScore) {
+        [_scoreResolver appendScore:negativeScore];
+    } else {
+        [_scoreResolver appendScore:positiveScore];
+    }
+    
+    self.score = _scoreResolver.score;
     
     CGRect bounds = self.contentView.bounds;
     
@@ -267,6 +317,28 @@ static BOOL OvalHitTest(CGPoint center, CGFloat radius, CGPoint linePoint1, CGPo
             [currentBeanViews removeObject:beanView];
         }
         [self _biteBeans:biteBeans];
+    }
+}
+
+- (BeanView *)beanViewAtLocation:(CGPoint)location
+{
+    for (BeanView * beanView in self.generator.currentBeanViews.reverseObjectEnumerator) {
+        if (CGRectContainsPoint(CGRectInset(beanView.frame, -BeanGameBeanRadiusExtend, -BeanGameBeanRadiusExtend), location)) {
+            return beanView;
+        }
+    }
+    return nil;
+}
+
+- (void)tapGestureRecognized:(UITapGestureRecognizer *)tapGesture
+{
+    if (tapGesture.state == UIGestureRecognizerStateRecognized) {
+        CGPoint location = [tapGesture locationInView:self.contentView];
+        BeanView * beanView = [self beanViewAtLocation:location];
+        if (beanView) {
+            [self.generator.currentBeanViews removeObject:beanView];
+            [self _biteBeans:@[beanView]];
+        }
     }
 }
 

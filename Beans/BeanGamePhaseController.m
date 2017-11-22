@@ -19,7 +19,14 @@
 
 @end
 
+static NSInteger BeanGamePhaseControllerRunningCount;
+
 @implementation BeanGamePhaseController
+
+- (void)dealloc
+{
+    self.running = NO;
+}
 
 - (instancetype)initWithPhases:(NSArray<BeanGamePhase *> *)phases contentView:(UIView *)contentView
 {
@@ -36,6 +43,21 @@
     return self;
 }
 
+- (void)setRunning:(BOOL)running
+{
+    if (_running != running) {
+        _running = running;
+        
+        if (running) {
+            BeanGamePhaseControllerRunningCount++;
+        } else {
+            BeanGamePhaseControllerRunningCount--;
+        }
+        
+        [UIApplication sharedApplication].idleTimerDisabled = BeanGamePhaseControllerRunningCount > 0;
+    }
+}
+
 - (void)start
 {
     for (BeanGamePhase * phase in _phases) {
@@ -43,7 +65,7 @@
     }
     [self _gameWillStart];
     
-    _running = YES;
+    self.running = YES;
     
     [self _runNextPhase];
 }
@@ -51,6 +73,7 @@
 - (void)stop
 {
     [_phasesToRun.firstObject stop];
+    self.running = NO;
 }
 
 - (void)_gameWillStart
@@ -69,6 +92,8 @@
     }
     
     [[NSNotificationCenter defaultCenter] removeObserver:self name:BeanGamePhaseDidUpdateStateNotification object:nil];
+    
+    self.running = NO;
 }
 
 - (void)_currentPhaseCompleted

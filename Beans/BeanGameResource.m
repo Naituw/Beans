@@ -46,7 +46,7 @@
     
     numberCount = MAX(1, MIN(numberCount, 5));
     
-    return images[numberCount];
+    return images[numberCount - 1];
 }
 
 @end

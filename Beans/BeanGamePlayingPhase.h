@@ -14,4 +14,6 @@
 - (void)bite;
 - (void)unbite;
 
+@property (nonatomic, assign, readonly) NSInteger score;
+
 @end

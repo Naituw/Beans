@@ -29,6 +29,7 @@
 @property (nonatomic, strong) UIView * mouthView;
 @property (nonatomic, strong) BeanGamePhaseController * phaseController;
 @property (nonatomic, strong) BeanGamePlayingPhase * playingPhase;
+@property (nonatomic, strong) BeanGameResultPhase * resultPhase;
 
 @property (nonatomic, assign) BOOL mouthOpen;
 
@@ -70,9 +71,9 @@
     [_session runWithConfiguration:config];
     
     _phaseController = [[BeanGamePhaseController alloc] initWithPhases:@[
-//                                                                         [BeanGameCountdownPhase phase],
+                                                                         [BeanGameCountdownPhase phase],
                                                                          self.playingPhase,
-                                                                         [BeanGameResultPhase phase]] contentView:_contentView];
+                                                                         self.resultPhase] contentView:_contentView];
     [_phaseController start];
 }
 
@@ -88,6 +89,14 @@
         _playingPhase = [BeanGamePlayingPhase phase];
     }
     return _playingPhase;
+}
+
+- (BeanGameResultPhase *)resultPhase
+{
+    if (!_resultPhase) {
+        _resultPhase = [BeanGameResultPhase phase];
+    }
+    return _resultPhase;
 }
 
 - (void)setSession:(ARSession *)session
@@ -220,15 +229,27 @@
     });
 }
 
+- (void)updateWithNode:(SCNNode *)node forAnchor:(ARAnchor *)anchor
+{
+    if (!_faceNode || !_faceAnchor) {
+        _faceNode = node;
+        if ([anchor isKindOfClass:[ARFaceAnchor class]]) {
+            _faceAnchor = (ARFaceAnchor *)anchor;
+        }
+        dispatch_async(_sceneKitQueue, ^{
+            [self setupFaceNode];
+        });
+    }
+}
+
 - (void)renderer:(id<SCNSceneRenderer>)renderer didAddNode:(SCNNode *)node forAnchor:(ARAnchor *)anchor
 {
-    _faceNode = node;
-    if ([anchor isKindOfClass:[ARFaceAnchor class]]) {
-        _faceAnchor = (ARFaceAnchor *)anchor;
-    }
-    dispatch_async(_sceneKitQueue, ^{
-        [self setupFaceNode];
-    });
+    [self updateWithNode:node forAnchor:anchor];
+}
+
+- (void)renderer:(id<SCNSceneRenderer>)renderer didUpdateNode:(SCNNode *)node forAnchor:(ARAnchor *)anchor
+{
+    [self updateWithNode:node forAnchor:anchor];
 }
 
 - (void)session:(ARSession *)session didUpdateAnchors:(NSArray<ARAnchor *> *)anchors

@@ -31,17 +31,22 @@
     [self.view addSubview:self.scnView];
     
     UIButton * tweakButton = [UIButton buttonWithType:UIButtonTypeCustom];
-    tweakButton.frame = CGRectMake(10, 32, 40, 40);
     tweakButton.backgroundColor = [UIColor colorWithWhite:0.0 alpha:0.2];
     [tweakButton addTarget:self action:@selector(tweakButtonPressed:) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:tweakButton];
     _tweakButton = tweakButton;
-    
+}
+
+- (void)viewDidAppear:(BOOL)animated
+{
     [self restart];
 }
 
 - (void)restart
 {
+    [_gameController stop];
+    [_contentView removeFromSuperview];
+
     _contentView = [[UIView alloc] initWithFrame:self.view.bounds];
     [self.view addSubview:_contentView];
     
@@ -65,6 +70,7 @@
     
     _scnView.frame = self.view.bounds;
     _contentView.frame = self.view.bounds;
+    _tweakButton.frame = CGRectMake(10, self.view.safeAreaInsets.top + 10, 40, 40);
 }
 
 - (void)tweakButtonPressed:(id)sender
@@ -80,10 +86,11 @@
 
 - (void)tweakViewControllerPressedDone:(FBTweakViewController *)tweakViewController
 {
-    @weakify(self);
+//    [tweakViewController dismissViewControllerAnimated:YES completion:^{
+//    }];
+//    [self restart];
+
     [tweakViewController dismissViewControllerAnimated:YES completion:^{
-        @strongify(self);
-        [self restart];
     }];
 }
 

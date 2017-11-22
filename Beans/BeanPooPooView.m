@@ -7,6 +7,8 @@
 //
 
 #import "BeanPooPooView.h"
+#import "BeanView+SubClass.h"
+#import "BeanGameDefines.h"
 
 @implementation BeanPooPooView
 
@@ -22,7 +24,12 @@
 
 - (NSInteger)score
 {
-    return -400;
+    return BeanGamePoopooScore;
+}
+
++ (CGSize)defaultSize
+{
+    return CGSizeMake(BeanGameBeanPoopooSize, BeanGameBeanPoopooSize);
 }
 
 @end

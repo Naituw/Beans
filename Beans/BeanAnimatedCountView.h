@@ -7,8 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "BeanImageSequenceView.h"
 
-@interface BeanAnimatedCountView : UIView
+@interface BeanAnimatedCountView : BeanImageSequenceView
 
 - (instancetype)initWithNumberImages:(NSArray<UIImage *> *)numberImages;
 
@@ -17,7 +18,5 @@
 @property (nonatomic, assign, readonly) NSUInteger digitCount;
 
 - (void)setCount:(NSUInteger)count animateDuration:(NSTimeInterval)duration;
-
-@property (nonatomic, copy) void(^updateBlock)(void);
 
 @end
