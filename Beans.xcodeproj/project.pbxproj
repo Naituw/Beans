@@ -43,6 +43,7 @@
 		C6269CBD1FC485C900F7B27A /* EXTScope.m in Sources */ = {isa = PBXBuildFile; fileRef = C6269CB41FC485C800F7B27A /* EXTScope.m */; };
 		C6269CBE1FC485C900F7B27A /* EXTADT.m in Sources */ = {isa = PBXBuildFile; fileRef = C6269CB51FC485C800F7B27A /* EXTADT.m */; };
 		C6269CC31FC4882400F7B27A /* UIView+WBTSizes.m in Sources */ = {isa = PBXBuildFile; fileRef = C6269CC21FC4882400F7B27A /* UIView+WBTSizes.m */; };
+		C62F592C1FC571FD00EC489B /* BeanGameResultView.m in Sources */ = {isa = PBXBuildFile; fileRef = C62F592B1FC571FD00EC489B /* BeanGameResultView.m */; };
 		C66653C41FBC9F600009F30C /* BeansGenerator.m in Sources */ = {isa = PBXBuildFile; fileRef = C66653C31FBC9F600009F30C /* BeansGenerator.m */; };
 		C66653C71FBC9FC20009F30C /* BeanView.m in Sources */ = {isa = PBXBuildFile; fileRef = C66653C61FBC9FC20009F30C /* BeanView.m */; };
 		C66653CA1FBCA14C0009F30C /* BeanNormalBeanView.m in Sources */ = {isa = PBXBuildFile; fileRef = C66653C91FBCA14C0009F30C /* BeanNormalBeanView.m */; };
@@ -51,6 +52,7 @@
 		C6789CE81FC5272B003E8947 /* BeanGameScoreResolver.m in Sources */ = {isa = PBXBuildFile; fileRef = C6789CE71FC5272B003E8947 /* BeanGameScoreResolver.m */; };
 		C6789CEC1FC53087003E8947 /* BeanImageSequenceView.m in Sources */ = {isa = PBXBuildFile; fileRef = C6789CEB1FC53087003E8947 /* BeanImageSequenceView.m */; };
 		C6789CEF1FC54A4A003E8947 /* BeanGameScoreHintView.m in Sources */ = {isa = PBXBuildFile; fileRef = C6789CEE1FC54A4A003E8947 /* BeanGameScoreHintView.m */; };
+		C6789CF21FC5541A003E8947 /* BeanBlurView.m in Sources */ = {isa = PBXBuildFile; fileRef = C6789CF11FC5541A003E8947 /* BeanBlurView.m */; };
 		C68123661FBC5A18002D6C23 /* BeanGamePhase.m in Sources */ = {isa = PBXBuildFile; fileRef = C68123651FBC5A18002D6C23 /* BeanGamePhase.m */; };
 		C68123691FBC5A2A002D6C23 /* BeanGamePhaseController.m in Sources */ = {isa = PBXBuildFile; fileRef = C68123681FBC5A2A002D6C23 /* BeanGamePhaseController.m */; };
 		C681236C1FBC5A3B002D6C23 /* BeanGameCountdownPhase.m in Sources */ = {isa = PBXBuildFile; fileRef = C681236B1FBC5A3B002D6C23 /* BeanGameCountdownPhase.m */; };
@@ -147,6 +149,8 @@
 		C6269CB51FC485C800F7B27A /* EXTADT.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EXTADT.m; sourceTree = "<group>"; };
 		C6269CC11FC4882400F7B27A /* UIView+WBTSizes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+WBTSizes.h"; sourceTree = "<group>"; };
 		C6269CC21FC4882400F7B27A /* UIView+WBTSizes.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+WBTSizes.m"; sourceTree = "<group>"; };
+		C62F592A1FC571FD00EC489B /* BeanGameResultView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BeanGameResultView.h; sourceTree = "<group>"; };
+		C62F592B1FC571FD00EC489B /* BeanGameResultView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BeanGameResultView.m; sourceTree = "<group>"; };
 		C66653C21FBC9F600009F30C /* BeansGenerator.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BeansGenerator.h; sourceTree = "<group>"; };
 		C66653C31FBC9F600009F30C /* BeansGenerator.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BeansGenerator.m; sourceTree = "<group>"; };
 		C66653C51FBC9FC20009F30C /* BeanView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BeanView.h; sourceTree = "<group>"; };
@@ -164,6 +168,8 @@
 		C6789CEB1FC53087003E8947 /* BeanImageSequenceView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BeanImageSequenceView.m; sourceTree = "<group>"; };
 		C6789CED1FC54A4A003E8947 /* BeanGameScoreHintView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BeanGameScoreHintView.h; sourceTree = "<group>"; };
 		C6789CEE1FC54A4A003E8947 /* BeanGameScoreHintView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BeanGameScoreHintView.m; sourceTree = "<group>"; };
+		C6789CF01FC5541A003E8947 /* BeanBlurView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BeanBlurView.h; sourceTree = "<group>"; };
+		C6789CF11FC5541A003E8947 /* BeanBlurView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BeanBlurView.m; sourceTree = "<group>"; };
 		C68123641FBC5A18002D6C23 /* BeanGamePhase.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BeanGamePhase.h; sourceTree = "<group>"; };
 		C68123651FBC5A18002D6C23 /* BeanGamePhase.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BeanGamePhase.m; sourceTree = "<group>"; };
 		C68123671FBC5A2A002D6C23 /* BeanGamePhaseController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BeanGamePhaseController.h; sourceTree = "<group>"; };
@@ -351,6 +357,10 @@
 				C681236E1FBC5A4F002D6C23 /* BeanGamePlayingPhase.m */,
 				C68123701FBC5A86002D6C23 /* BeanGameResultPhase.h */,
 				C68123711FBC5A86002D6C23 /* BeanGameResultPhase.m */,
+				C62F592A1FC571FD00EC489B /* BeanGameResultView.h */,
+				C62F592B1FC571FD00EC489B /* BeanGameResultView.m */,
+				C6789CF01FC5541A003E8947 /* BeanBlurView.h */,
+				C6789CF11FC5541A003E8947 /* BeanBlurView.m */,
 				C66653C21FBC9F600009F30C /* BeansGenerator.h */,
 				C66653C31FBC9F600009F30C /* BeansGenerator.m */,
 				C6789CE61FC5272B003E8947 /* BeanGameScoreResolver.h */,
@@ -460,6 +470,7 @@
 				C6269C8A1FC4859F00F7B27A /* _FBColorWheelCell.m in Sources */,
 				C6269C561FC4821C00F7B27A /* BeanNoAnimationLayer.m in Sources */,
 				C6ACA5EA1FB98FFF001D43A2 /* ViewController.m in Sources */,
+				C6789CF21FC5541A003E8947 /* BeanBlurView.m in Sources */,
 				C66653C41FBC9F600009F30C /* BeansGenerator.m in Sources */,
 				C6269C531FC4757600F7B27A /* BeanAnimatedCountView.m in Sources */,
 				C6269C901FC4859F00F7B27A /* FBTweakStore.m in Sources */,
@@ -479,6 +490,7 @@
 				C66653CD1FBCA1580009F30C /* BeanLargeBeanView.m in Sources */,
 				C68123721FBC5A86002D6C23 /* BeanGameResultPhase.m in Sources */,
 				C622EB621FC46FE800EA2EAC /* BeanScoreView.m in Sources */,
+				C62F592C1FC571FD00EC489B /* BeanGameResultView.m in Sources */,
 				C681237A1FBDA265002D6C23 /* BeanLayerContainerView.m in Sources */,
 				C6269C8E1FC4859F00F7B27A /* _FBTweakBindObserver.m in Sources */,
 				C6789CEF1FC54A4A003E8947 /* BeanGameScoreHintView.m in Sources */,

@@ -25,6 +25,7 @@ static NSInteger BeanGamePhaseControllerRunningCount;
 
 - (void)dealloc
 {
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
     self.running = NO;
 }
 

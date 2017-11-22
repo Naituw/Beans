@@ -16,4 +16,6 @@
 
 + (UIImage *)scoreBoardImageWithNumberCount:(NSUInteger)numberCount;
 
++ (NSArray<UIImage *> *)resultScoreNumberImages;
+
 @end

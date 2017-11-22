@@ -49,4 +49,19 @@
     return images[numberCount - 1];
 }
 
++ (NSArray<UIImage *> *)resultScoreNumberImages
+{
+    static NSArray * images = nil;
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
+        NSMutableArray * a = [NSMutableArray arrayWithCapacity:10];
+        for (NSInteger i = 0; i < 10; i++) {
+            [a addObject:[UIImage imageNamed:[NSString stringWithFormat:@"COMBO_%zd", i]]];
+        }
+        images = a;
+    });
+    
+    return images;
+}
+
 @end

@@ -37,6 +37,11 @@
 
 @implementation BeanGameController
 
+- (void)dealloc
+{
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
+}
+
 - (instancetype)initWithARSCNView:(ARSCNView *)scnView contentContainerView:(UIView *)contentView interfaceContainerView:(UIView *)interfaceView
 {
     if (self = [self init]) {
@@ -50,6 +55,8 @@
         if (BeanGameMouthTrackDebugging) {
             [_contentView addSubview:self.mouthView];
         }
+        
+        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(phaseStateDidUpdateNotification:) name:BeanGamePhaseDidUpdateStateNotification object:nil];
     }
     return self;
 }
@@ -62,6 +69,17 @@
         _mouthView.layer.anchorPoint = CGPointMake(0, 0);
     }
     return _mouthView;
+}
+
+- (void)phaseStateDidUpdateNotification:(NSNotification *)notification
+{
+    if (notification.object != _playingPhase) {
+        return;
+    }
+    
+    if (_playingPhase.state == BeanGamePhaseStateCompleted) {
+        _resultPhase.score = _playingPhase.score;
+    }
 }
 
 - (void)start

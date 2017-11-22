@@ -10,4 +10,6 @@
 
 @interface BeanGameResultPhase : BeanGamePhase
 
+@property (nonatomic, assign) NSInteger score;
+
 @end
