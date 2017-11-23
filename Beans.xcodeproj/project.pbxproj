@@ -47,7 +47,7 @@
 		C62F59321FC6799600EC489B /* BeanGameSoundManager.m in Sources */ = {isa = PBXBuildFile; fileRef = C62F59311FC6799600EC489B /* BeanGameSoundManager.m */; };
 		C62F59371FC6838400EC489B /* soundeffect_bg.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = C62F59341FC6838300EC489B /* soundeffect_bg.mp3 */; };
 		C62F59381FC6838400EC489B /* soundeffect_go.wav in Resources */ = {isa = PBXBuildFile; fileRef = C62F59351FC6838400EC489B /* soundeffect_go.wav */; };
-		C62F593C1FC688B400EC489B /* soundeffect_eat.m4a in Resources */ = {isa = PBXBuildFile; fileRef = C62F593B1FC688B300EC489B /* soundeffect_eat.m4a */; };
+		C62F59401FC68ABF00EC489B /* soundeffect_eat.m4a in Resources */ = {isa = PBXBuildFile; fileRef = C62F593F1FC68ABE00EC489B /* soundeffect_eat.m4a */; };
 		C66653C41FBC9F600009F30C /* BeansGenerator.m in Sources */ = {isa = PBXBuildFile; fileRef = C66653C31FBC9F600009F30C /* BeansGenerator.m */; };
 		C66653C71FBC9FC20009F30C /* BeanView.m in Sources */ = {isa = PBXBuildFile; fileRef = C66653C61FBC9FC20009F30C /* BeanView.m */; };
 		C66653CA1FBCA14C0009F30C /* BeanNormalBeanView.m in Sources */ = {isa = PBXBuildFile; fileRef = C66653C91FBCA14C0009F30C /* BeanNormalBeanView.m */; };
@@ -160,7 +160,7 @@
 		C62F59311FC6799600EC489B /* BeanGameSoundManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BeanGameSoundManager.m; sourceTree = "<group>"; };
 		C62F59341FC6838300EC489B /* soundeffect_bg.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = soundeffect_bg.mp3; sourceTree = "<group>"; };
 		C62F59351FC6838400EC489B /* soundeffect_go.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = soundeffect_go.wav; sourceTree = "<group>"; };
-		C62F593B1FC688B300EC489B /* soundeffect_eat.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = soundeffect_eat.m4a; sourceTree = "<group>"; };
+		C62F593F1FC68ABE00EC489B /* soundeffect_eat.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = soundeffect_eat.m4a; sourceTree = "<group>"; };
 		C66653C21FBC9F600009F30C /* BeansGenerator.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BeansGenerator.h; sourceTree = "<group>"; };
 		C66653C31FBC9F600009F30C /* BeansGenerator.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BeansGenerator.m; sourceTree = "<group>"; };
 		C66653C51FBC9FC20009F30C /* BeanView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BeanView.h; sourceTree = "<group>"; };
@@ -402,8 +402,8 @@
 				C66653CE1FBCA1870009F30C /* BeanPooPooView.h */,
 				C66653CF1FBCA1870009F30C /* BeanPooPooView.m */,
 				C62F59341FC6838300EC489B /* soundeffect_bg.mp3 */,
-				C62F593B1FC688B300EC489B /* soundeffect_eat.m4a */,
 				C62F59351FC6838400EC489B /* soundeffect_go.wav */,
+				C62F593F1FC68ABE00EC489B /* soundeffect_eat.m4a */,
 				C6ACA5EB1FB98FFF001D43A2 /* Main.storyboard */,
 				C6ACA5EE1FB98FFF001D43A2 /* Assets.xcassets */,
 				C6ACA5F01FB98FFF001D43A2 /* LaunchScreen.storyboard */,
@@ -471,9 +471,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C62F59401FC68ABF00EC489B /* soundeffect_eat.m4a in Resources */,
 				C62F59371FC6838400EC489B /* soundeffect_bg.mp3 in Resources */,
 				C62F59381FC6838400EC489B /* soundeffect_go.wav in Resources */,
-				C62F593C1FC688B400EC489B /* soundeffect_eat.m4a in Resources */,
 				C6ACA5F21FB98FFF001D43A2 /* LaunchScreen.storyboard in Resources */,
 				C6ACA5EF1FB98FFF001D43A2 /* Assets.xcassets in Resources */,
 				C6ACA5ED1FB98FFF001D43A2 /* Main.storyboard in Resources */,

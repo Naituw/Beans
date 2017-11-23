@@ -39,6 +39,7 @@
         NSString * bitePath = [[NSBundle mainBundle] pathForResource:@"soundeffect_eat" ofType:@"m4a"];
         
         _backgroundMusicPlayer = [[AVAudioPlayer alloc] initWithContentsOfURL:[NSURL fileURLWithPath:bgPath] error:NULL];
+        _backgroundMusicPlayer.volume = 0.8;
         [_backgroundMusicPlayer prepareToPlay];
         
         AudioServicesCreateSystemSoundID((__bridge CFURLRef)[NSURL fileURLWithPath:goPath], &_goSoundEffect);
