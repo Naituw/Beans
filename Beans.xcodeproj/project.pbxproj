@@ -59,6 +59,7 @@
 		C681236F1FBC5A4F002D6C23 /* BeanGamePlayingPhase.m in Sources */ = {isa = PBXBuildFile; fileRef = C681236E1FBC5A4F002D6C23 /* BeanGamePlayingPhase.m */; };
 		C68123721FBC5A86002D6C23 /* BeanGameResultPhase.m in Sources */ = {isa = PBXBuildFile; fileRef = C68123711FBC5A86002D6C23 /* BeanGameResultPhase.m */; };
 		C681237A1FBDA265002D6C23 /* BeanLayerContainerView.m in Sources */ = {isa = PBXBuildFile; fileRef = C68123791FBDA264002D6C23 /* BeanLayerContainerView.m */; };
+		C690D1FB1FC5AB7A00BE9911 /* BeanGameProgressBar.m in Sources */ = {isa = PBXBuildFile; fileRef = C690D1FA1FC5AB7A00BE9911 /* BeanGameProgressBar.m */; };
 		C6ACA5E71FB98FFE001D43A2 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = C6ACA5E61FB98FFE001D43A2 /* AppDelegate.m */; };
 		C6ACA5EA1FB98FFF001D43A2 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C6ACA5E91FB98FFF001D43A2 /* ViewController.m */; };
 		C6ACA5ED1FB98FFF001D43A2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C6ACA5EB1FB98FFF001D43A2 /* Main.storyboard */; };
@@ -186,6 +187,8 @@
 		C68123781FBDA264002D6C23 /* BeanLayerContainerView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BeanLayerContainerView.h; sourceTree = "<group>"; };
 		C68123791FBDA264002D6C23 /* BeanLayerContainerView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BeanLayerContainerView.m; sourceTree = "<group>"; };
 		C681237B1FBDAAF5002D6C23 /* BeanGameDefines.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BeanGameDefines.h; sourceTree = "<group>"; };
+		C690D1F91FC5AB7A00BE9911 /* BeanGameProgressBar.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BeanGameProgressBar.h; sourceTree = "<group>"; };
+		C690D1FA1FC5AB7A00BE9911 /* BeanGameProgressBar.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BeanGameProgressBar.m; sourceTree = "<group>"; };
 		C6ACA5E21FB98FFE001D43A2 /* Beans.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Beans.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C6ACA5E51FB98FFE001D43A2 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		C6ACA5E61FB98FFE001D43A2 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -359,6 +362,8 @@
 				C68123711FBC5A86002D6C23 /* BeanGameResultPhase.m */,
 				C62F592A1FC571FD00EC489B /* BeanGameResultView.h */,
 				C62F592B1FC571FD00EC489B /* BeanGameResultView.m */,
+				C690D1F91FC5AB7A00BE9911 /* BeanGameProgressBar.h */,
+				C690D1FA1FC5AB7A00BE9911 /* BeanGameProgressBar.m */,
 				C6789CF01FC5541A003E8947 /* BeanBlurView.h */,
 				C6789CF11FC5541A003E8947 /* BeanBlurView.m */,
 				C66653C21FBC9F600009F30C /* BeansGenerator.h */,
@@ -509,6 +514,7 @@
 				C6269C961FC4859F00F7B27A /* FBTweak.m in Sources */,
 				C6269CB61FC485C900F7B27A /* NSInvocation+EXT.m in Sources */,
 				C6269C971FC4859F00F7B27A /* FBTweakInline.m in Sources */,
+				C690D1FB1FC5AB7A00BE9911 /* BeanGameProgressBar.m in Sources */,
 				C6269C941FC4859F00F7B27A /* _FBTweakArrayViewController.m in Sources */,
 				C6269C9D1FC4859F00F7B27A /* FBTweakCollection.m in Sources */,
 				C6269C8F1FC4859F00F7B27A /* _FBTweakColorViewController.m in Sources */,
