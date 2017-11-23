@@ -31,7 +31,7 @@
     _resultView.transform = CGAffineTransformMakeScale(0.3, 0.3);
     _resultView.alpha = 0.0;
         
-    [UIView animateWithDuration:1.0 delay:0.0 usingSpringWithDamping:0.7 initialSpringVelocity:0.0 options:UIViewAnimationOptionAllowUserInteraction animations:^{
+    [UIView animateWithDuration:1.5 delay:0.0 usingSpringWithDamping:0.7 initialSpringVelocity:0.0 options:UIViewAnimationOptionAllowUserInteraction animations:^{
         _resultView.alpha = 1.0;
         _resultView.transform = CGAffineTransformIdentity;
     } completion:^(BOOL finished) {
@@ -39,7 +39,17 @@
     }];
     
     [UIView animateWithDuration:1.5 delay:0.0 options:UIViewAnimationOptionAllowUserInteraction animations:^{
-        _blurView.effect = [UIBlurEffect effectWithStyle:UIBlurEffectStyleLight];
+        
+//        UIBlurEffect * effect = [UIBlurEffect effectWithStyle:UIBlurEffectStyleDark];
+        
+#warning Private API here!
+        UIBlurEffect * effect = [NSClassFromString(@"_UICustomBlurEffect") effectWithStyle:UIBlurEffectStyleLight];
+        [effect setValue:[UIColor colorWithWhite:0.0 alpha:0.1] forKey:@"colorTint"];
+        [effect setValue:@(0.0) forKey:@"colorTintAlpha"];
+        [effect setValue:@(0.0) forKey:@"grayscaleTintAlpha"];
+        [effect setValue:@(16) forKey:@"blurRadius"];
+        
+        _blurView.effect = effect;
     } completion:NULL];
     
     [self.resultView startAnimating];

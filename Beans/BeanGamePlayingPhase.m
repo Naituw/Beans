@@ -18,6 +18,7 @@
 #import "BeanGameResource.h"
 #import "BeanGameScoreResolver.h"
 #import "BeanGameProgressBar.h"
+#import "BeanGameSoundManager.h"
 #import "EXTScope.h"
 #import "UIView+WBTSizes.h"
 
@@ -73,6 +74,13 @@
     [self.contentView addSubview:_progressBar];
     
     [self layout];
+    
+    [[BeanGameSoundManager sharedManager] beginBackgroundMusicPlayback];
+}
+
+- (void)_gameDidFinish
+{
+    [[BeanGameSoundManager sharedManager] endBackgroundMusicPlayback];
 }
 
 - (void)layout
@@ -87,6 +95,8 @@
 - (void)_runPhase
 {
     NSLog(@"Start Playing");
+    
+    [[BeanGameSoundManager sharedManager] playGo];
     
     if (BeanGameTouchEnabled) {
         if (!_simulatorTapGesture) {
@@ -179,6 +189,8 @@
     } else {
         [_scoreResolver appendScore:positiveScore];
     }
+    
+    [[BeanGameSoundManager sharedManager] playBite];
     
     self.score = _scoreResolver.score;
     

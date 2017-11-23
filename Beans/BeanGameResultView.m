@@ -60,9 +60,9 @@
         _label.font = [UIFont systemFontOfSize:24 weight:UIFontWeightSemibold];
         _label.textColor = [UIColor whiteColor];
         _label.layer.shouldRasterize = YES;
-        _label.layer.shadowColor = [UIColor colorWithWhite:0.0 alpha:1.0].CGColor;
+        _label.layer.shadowColor = [UIColor colorWithRed:100.0/255 green:222.0/255 blue:224.0/255 alpha:1.0].CGColor;
         _label.layer.shadowOffset = CGSizeMake(0, 0);
-        _label.layer.shadowRadius = 4.0;
+        _label.layer.shadowRadius = 2.0;
         _label.layer.shadowOpacity = 1.0;
         _label.layer.masksToBounds = NO;
     }
@@ -74,7 +74,7 @@
     [super layoutSubviews];
     
     CGPoint center = CGPointMake(self.wbtWidth / 2, self.wbtHeight / 2);
-    _animatedCountView.center = CGPointMake(center.x, center.y - 80);
+    _animatedCountView.center = CGPointMake(center.x, center.y - 50);
     _label.center = CGPointMake(center.x, center.y + 20);
 }
 

@@ -28,6 +28,7 @@
 {
     [super viewDidLoad];
     
+    [self.view setBackgroundColor:[UIColor colorWithWhite:0.7 alpha:1.0]];
     [self.view addSubview:self.scnView];
     
     UIButton * tweakButton = [UIButton buttonWithType:UIButtonTypeCustom];

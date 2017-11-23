@@ -8,6 +8,7 @@
 
 #import "BeanGameCountdownPhase.h"
 #import "BeanGamePhase+SubClass.h"
+#import "BeanGameSoundManager.h"
 
 @interface BeanGameCountdownPhase ()
 
