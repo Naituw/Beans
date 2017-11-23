@@ -13,10 +13,11 @@
 
 #define BeanGameBeanRadiusExtend 5.0
 
-#define BeanGameBeanAccelerationRate FBTweakValue(@"豆子发生器", @"豆子发生器", @"加速度", 100.0)
+#define BeanGameBeanAccelerationRate FBTweakValue(@"豆子发生器", @"豆子发生器", @"加速度", 110.0)
 #define BeanGameBeanMinBeansPerSecond FBTweakValue(@"豆子发生器", @"豆子发生器", @"最少豆子/秒", 2)
-#define BeanGameBeanMaxBeansPerSecond FBTweakValue(@"豆子发生器", @"豆子发生器", @"最多豆子/秒", 3)
+#define BeanGameBeanMaxBeansPerSecond FBTweakValue(@"豆子发生器", @"豆子发生器", @"最多豆子/秒", 4)
 #define BeanGameBeanGeneratorSpeedUpDuration FBTweakValue(@"豆子发生器", @"豆子发生器", @"数量加速时长", 8)
+#define BeanGameBeanNumberOfReferenceBeansToPreventOverlay FBTweakValue(@"豆子发生器", @"豆子发生器", @"防重叠参考个数", 3, 0, 4)
 
 #define BeanGameNormalBeanChance FBTweakValue(@"豆子", @"几率", @"普通豆几率", 8)
 #define BeanGameLargeBeanChance FBTweakValue(@"豆子", @"几率", @"巨型豆几率", 1)
@@ -31,7 +32,7 @@
 #define BeanGamePoopooScore FBTweakValue(@"豆子", @"得分", @"大便得分", -400)
 
 
-#define BeanGameDuration FBTweakValue(@"游戏", @"游戏", @"游戏时长", 10.0)
+#define BeanGameDuration FBTweakValue(@"游戏", @"游戏", @"游戏时长", 12.0)
 #define BeanGameTouchEnabled FBTweakValue(@"游戏", @"游戏", @"通过点击吃豆", YES)
 
 #define BeanGameBeanComboInterval FBTweakValue(@"游戏", @"连击", @"连击最大间隔", 1.0)

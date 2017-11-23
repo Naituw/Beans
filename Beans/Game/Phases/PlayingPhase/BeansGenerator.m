@@ -29,6 +29,9 @@
 @property (nonatomic, strong) NSMutableSet<Class> * beanClassesNotCreatedYet;
 @property (nonatomic, assign) NSTimeInterval mostRencetNotCreatedYetBeanCreationTime;
 
+@property (nonatomic, strong) NSMutableArray * previouslyCreatedBeans;
+@property (nonatomic, assign) NSInteger numberOfBeansToPreventOverlay;
+
 @end
 
 @implementation BeansGenerator
@@ -38,6 +41,8 @@
     if (self = [self init]) {
         _contentView = contentView;
         _currentBeanViews = [NSMutableArray array];
+        _previouslyCreatedBeans = [NSMutableArray array];
+        _numberOfBeansToPreventOverlay = MAX(0, MIN(BeanGameBeanNumberOfReferenceBeansToPreventOverlay, 4));
     }
     return self;
 }
@@ -82,7 +87,7 @@
     if (_generating) {
         if (_nextBeanTime <= currentTime) {
             [self _createBean];
-            if ((arc4random() % 2) == 1) {
+            if ((arc4random() % 10) > 5) {
                 // chances to genrate two
                 [self _createBean];
             }
@@ -143,6 +148,81 @@
     }
 }
 
+- (CGFloat)_findOriginXForBeanWithSize:(CGSize)size
+{
+    CGFloat minX = 5;
+    CGFloat maxX = _contentView.bounds.size.width - 5 - size.width;
+
+    if (_previouslyCreatedBeans.count > 0) {
+        
+        NSArray * sortedPreviouslyCreatedBeans = [_previouslyCreatedBeans sortedArrayUsingComparator:^NSComparisonResult(BeanView * _Nonnull obj1, BeanView * _Nonnull obj2) {
+            return [@(obj1.frame.origin.x) compare:@(obj2.frame.origin.x)];
+        }];
+        
+        CGFloat (^find)(CGSize) = ^CGFloat (CGSize size) {
+            NSMutableArray<NSValue *> * availableRanges = [NSMutableArray array];
+            
+            CGFloat baseX = minX;
+            CGFloat totalLength = 0;
+            
+            for (BeanView * beanView in sortedPreviouslyCreatedBeans) {
+                CGRect frame = beanView.frame;
+                CGFloat beanMaxX = CGRectGetMinX(frame) - size.width;
+                if (beanMaxX > baseX) {
+                    CGFloat length = beanMaxX - baseX;
+                    [availableRanges addObject:[NSValue valueWithCGPoint:CGPointMake(baseX, length)]];
+                    totalLength += length;
+                }
+                baseX = CGRectGetMaxX(frame);
+            }
+            
+            CGFloat beanMaxX = maxX - size.width;
+            if (baseX < beanMaxX) {
+                CGFloat length = beanMaxX - baseX;
+                [availableRanges addObject:[NSValue valueWithCGPoint:CGPointMake(baseX, length)]];
+                totalLength += length;
+            }
+            
+            if (availableRanges.count > 0 && totalLength > 0) {
+                
+                CGFloat resultLocation = floor(totalLength * (double)(arc4random() % 100) / 100.0);
+                
+                for (NSValue * value in availableRanges) {
+                    CGPoint range = [value CGPointValue];
+                    if (range.y > resultLocation) {
+                        return range.x + resultLocation;
+                    } else {
+                        resultLocation -= range.y;
+                    }
+                }
+                
+                NSAssert(NO, @"should found a location in previous logic");
+                
+                CGPoint lastRange = [availableRanges.lastObject CGPointValue];
+                
+                return lastRange.x + lastRange.y;
+            }
+            return -1;
+        };
+        
+        CGFloat result = find(size);
+        if (result < 0) {
+            result = find(CGSizeMake(size.width / 2, size.height / 2));
+        }
+        if (result < 0) {
+            result = find(CGSizeMake(size.width / 4, size.height / 4));
+        }
+        if (result < 0) {
+            result = find(CGSizeMake(size.width / 8, size.height / 8));
+        }
+        if (result >= 0) {
+            return result;
+        }
+    }
+    
+    return ((double)(arc4random() % 100) / 100.0) * (maxX - minX) + minX;
+}
+
 - (void)_createBeanWithClass:(Class)klass
 {
     BeanView * beanView = [klass view];
@@ -150,14 +230,17 @@
     [_contentView.layer addSublayer:beanView];
     CGRect frame = (CGRect){.origin = CGPointZero, .size = beanView.frame.size};
     frame.origin.y = 0 - frame.size.height;
-    
-    CGFloat minX = 5;
-    CGFloat maxX = _contentView.bounds.size.width - 5 - frame.size.width;
-    
-    frame.origin.x = ((double)(arc4random() % 100) / 100.0) * (maxX - minX) + minX;
+    frame.origin.x = [self _findOriginXForBeanWithSize:frame.size];
     beanView.frame = frame;
     
     [_currentBeanViews addObject:beanView];
+    
+    if (_numberOfBeansToPreventOverlay > 0) {
+        while (_previouslyCreatedBeans.count > (_numberOfBeansToPreventOverlay - 1)) {
+            [_previouslyCreatedBeans removeObjectAtIndex:0];
+        }
+        [_previouslyCreatedBeans addObject:beanView];
+    }
     
     [beanView startRotationAnimation];
 }
