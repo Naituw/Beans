@@ -17,6 +17,7 @@
 #import "BeanScoreView.h"
 #import "BeanGameResource.h"
 #import "BeanGameScoreResolver.h"
+#import "BeanGameProgressBar.h"
 #import "EXTScope.h"
 #import "UIView+WBTSizes.h"
 
@@ -31,6 +32,7 @@
 @property (nonatomic, strong) BeanScoreView * scoreView;
 @property (nonatomic, assign) NSInteger score;
 @property (nonatomic, strong) UITapGestureRecognizer * simulatorTapGesture;
+@property (nonatomic, strong) BeanGameProgressBar * progressBar;
 
 @end
 
@@ -66,6 +68,10 @@
     }];
     [self.contentView addSubview:_scoreView];
     
+    _progressBar = [[BeanGameProgressBar alloc] initWithFrame:CGRectZero];
+    _progressBar.progress = 1.0;
+    [self.contentView addSubview:_progressBar];
+    
     [self layout];
 }
 
@@ -73,6 +79,9 @@
 {
     _scoreView.wbtRight = self.contentView.wbtWidth - 15;
     _scoreView.wbtTop = 10 + self.contentView.safeAreaInsets.top;
+    
+    CGFloat height = 8;
+    _progressBar.frame = CGRectMake(10, self.contentView.wbtHeight - height - MAX(self.contentView.safeAreaInsets.bottom, 16), self.contentView.wbtWidth - 10 * 2, height);
 }
 
 - (void)_runPhase
@@ -94,14 +103,14 @@
     CGFloat distance = self.contentView.wbtHeight + BeanGameBeanLargeSize;
     NSTimeInterval timeFromTopToBottom = sqrt(2 * distance / BeanGameBeanAccelerationRate);
     
-    __weak typeof(self) weakSelf = self;
+    @weakify(self);
     [_generator setUpdateBlock:^{
-        __strong typeof(self) this = weakSelf;
-        if (!this) {
+        @strongify(self);
+        if (!self) {
             return;
         }
         
-        BeansGenerator * gen = this.generator;
+        BeansGenerator * gen = self.generator;
         NSTimeInterval timeElapsed = gen.timeElapsed;
         
         if (timeElapsed > (BeanGameDuration - timeFromTopToBottom)) {
@@ -110,10 +119,12 @@
         
         NSTimeInterval remainTime = BeanGameDuration - timeElapsed;
         if (remainTime <= 0) {
+            [self.progressBar setProgress:0.0];
             [gen stopUpdating];
-            [this setState:BeanGamePhaseStateCompleted];
+            [self setState:BeanGamePhaseStateCompleted];
         } else {
-            [this _updateBeans];
+            [self.progressBar setProgress:(remainTime / BeanGameDuration)];
+            [self _updateBeans];
         }
     }];
     
