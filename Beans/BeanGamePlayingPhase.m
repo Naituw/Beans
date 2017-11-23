@@ -178,7 +178,17 @@
         for (BeanLayerContainerView * containerView in containerViews) {
             CGRect frame = containerView.frame;
 
-            if (containerView.beanView.biteMouthPosition < 0.5) {
+            BOOL throwLeft = NO;
+            
+            if (CGRectGetMidX(frame) < (CGRectGetWidth(bounds) / 3)) {
+                throwLeft = YES;
+            } else if (CGRectGetMidX(frame) > (CGRectGetWidth(bounds) * 2 / 3)) {
+                throwLeft = NO;
+            } else {
+                throwLeft = containerView.beanView.biteMouthPosition < 0.5;
+            }
+            
+            if (throwLeft) {
                 // throw left
                 frame.origin.x = bounds.origin.x - frame.size.width;
             } else {
