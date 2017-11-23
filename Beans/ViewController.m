@@ -17,7 +17,7 @@
 
 @property (nonatomic, strong) ARSCNView * scnView;
 @property (nonatomic, strong) BeanGameController * gameController;
-@property (nonatomic, strong) UIVsiew * contentView;
+@property (nonatomic, strong) UIView * contentView;
 @property (nonatomic, strong) UIButton * tweakButton;
 
 @end
