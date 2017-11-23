@@ -88,10 +88,21 @@
     config.lightEstimationEnabled = NO;
     [_session runWithConfiguration:config];
     
-    _phaseController = [[BeanGamePhaseController alloc] initWithPhases:@[
-                                                                         [BeanGameCountdownPhase phase],
-                                                                         self.playingPhase,
-                                                                         self.resultPhase] contentView:_contentView];
+    NSMutableArray<BeanGamePhase *> * phases = [NSMutableArray array];
+    
+    if (BeanGameCountDownPhaseEnabled) {
+        [phases addObject:[BeanGameCountdownPhase phase]];
+    }
+    
+    if (BeanGamePlayingPhaseEnabled) {
+        [phases addObject:self.playingPhase];
+    }
+    
+    if (BeanGameResultPhaseEnabled) {
+        [phases addObject:self.resultPhase];
+    }
+    
+    _phaseController = [[BeanGamePhaseController alloc] initWithPhases:phases contentView:_contentView];
     [_phaseController start];
 }
 

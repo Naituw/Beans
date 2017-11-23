@@ -31,7 +31,7 @@
     _resultView.transform = CGAffineTransformMakeScale(0.3, 0.3);
     _resultView.alpha = 0.0;
         
-    [UIView animateWithDuration:1.5 delay:0.0 usingSpringWithDamping:0.7 initialSpringVelocity:0.0 options:UIViewAnimationOptionAllowUserInteraction animations:^{
+    [UIView animateWithDuration:1.5 delay:0.0 usingSpringWithDamping:0.9 initialSpringVelocity:0.0 options:UIViewAnimationOptionAllowUserInteraction animations:^{
         _resultView.alpha = 1.0;
         _resultView.transform = CGAffineTransformIdentity;
     } completion:^(BOOL finished) {

@@ -19,6 +19,7 @@
 @property (nonatomic, strong) UILabel * label;
 
 @property (nonatomic, strong) BeanAnimatedCountView * animatedCountView;
+@property (nonatomic, strong) UIImageView * starView;
 
 @end
 
@@ -30,6 +31,7 @@
         _score = score;
         _percentOfPeopleBelow = [self calculatePercentOfPeopleBelowScore:score];
         
+        [self addSubview:self.starView];
         [self addSubview:self.animatedCountView];
         [self addSubview:self.label];
         
@@ -37,6 +39,14 @@
         [_label sizeToFit];
     }
     return self;
+}
+
+- (UIImageView *)starView
+{
+    if (!_starView) {
+        _starView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"final_star"]];
+    }
+    return _starView;
 }
 
 - (BeanAnimatedCountView *)animatedCountView
@@ -75,7 +85,10 @@
     
     CGPoint center = CGPointMake(self.wbtWidth / 2, self.wbtHeight / 2);
     _animatedCountView.center = CGPointMake(center.x, center.y - 50);
-    _label.center = CGPointMake(center.x, center.y + 20);
+    _label.center = CGPointMake(center.x, center.y + 10);
+    
+    _starView.wbtCenterX = _animatedCountView.wbtCenterX;
+    _starView.wbtBottom = _animatedCountView.wbtBottom - 10;
 }
 
 - (NSInteger)calculatePercentOfPeopleBelowScore:(NSInteger)score

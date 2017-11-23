@@ -32,7 +32,7 @@
     [self.view addSubview:self.scnView];
     
     UIButton * tweakButton = [UIButton buttonWithType:UIButtonTypeCustom];
-    tweakButton.backgroundColor = [UIColor colorWithWhite:0.0 alpha:0.2];
+    tweakButton.backgroundColor = [UIColor colorWithWhite:0.0 alpha:0.01];
     [tweakButton addTarget:self action:@selector(tweakButtonPressed:) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:tweakButton];
     _tweakButton = tweakButton;
