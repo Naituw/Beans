@@ -329,6 +329,119 @@
 			path = Weibo;
 			sourceTree = "<group>";
 		};
+		C62F59441FC6D15D00EC489B /* CountDownPhase */ = {
+			isa = PBXGroup;
+			children = (
+				C681236A1FBC5A3B002D6C23 /* BeanGameCountdownPhase.h */,
+				C681236B1FBC5A3B002D6C23 /* BeanGameCountdownPhase.m */,
+			);
+			path = CountDownPhase;
+			sourceTree = "<group>";
+		};
+		C62F59451FC6D16700EC489B /* PlayingPhase */ = {
+			isa = PBXGroup;
+			children = (
+				C681236D1FBC5A4F002D6C23 /* BeanGamePlayingPhase.h */,
+				C681236E1FBC5A4F002D6C23 /* BeanGamePlayingPhase.m */,
+				C690D1F91FC5AB7A00BE9911 /* BeanGameProgressBar.h */,
+				C690D1FA1FC5AB7A00BE9911 /* BeanGameProgressBar.m */,
+				C66653C21FBC9F600009F30C /* BeansGenerator.h */,
+				C66653C31FBC9F600009F30C /* BeansGenerator.m */,
+				C6789CE61FC5272B003E8947 /* BeanGameScoreResolver.h */,
+				C6789CE71FC5272B003E8947 /* BeanGameScoreResolver.m */,
+				C6789CED1FC54A4A003E8947 /* BeanGameScoreHintView.h */,
+				C6789CEE1FC54A4A003E8947 /* BeanGameScoreHintView.m */,
+				C622EB601FC46FE800EA2EAC /* BeanScoreView.h */,
+				C622EB611FC46FE800EA2EAC /* BeanScoreView.m */,
+				C68123781FBDA264002D6C23 /* BeanLayerContainerView.h */,
+				C68123791FBDA264002D6C23 /* BeanLayerContainerView.m */,
+				C66653C51FBC9FC20009F30C /* BeanView.h */,
+				C66653C61FBC9FC20009F30C /* BeanView.m */,
+				C68123761FBD4AF2002D6C23 /* BeanView+Private.h */,
+				C66653D11FBCA7720009F30C /* BeanView+SubClass.h */,
+				C66653C81FBCA14C0009F30C /* BeanNormalBeanView.h */,
+				C66653C91FBCA14C0009F30C /* BeanNormalBeanView.m */,
+				C66653CB1FBCA1580009F30C /* BeanLargeBeanView.h */,
+				C66653CC1FBCA1580009F30C /* BeanLargeBeanView.m */,
+				C66653CE1FBCA1870009F30C /* BeanPooPooView.h */,
+				C66653CF1FBCA1870009F30C /* BeanPooPooView.m */,
+			);
+			path = PlayingPhase;
+			sourceTree = "<group>";
+		};
+		C62F59461FC6D16C00EC489B /* ResultPhase */ = {
+			isa = PBXGroup;
+			children = (
+				C68123701FBC5A86002D6C23 /* BeanGameResultPhase.h */,
+				C68123711FBC5A86002D6C23 /* BeanGameResultPhase.m */,
+				C62F592A1FC571FD00EC489B /* BeanGameResultView.h */,
+				C62F592B1FC571FD00EC489B /* BeanGameResultView.m */,
+				C6789CF01FC5541A003E8947 /* BeanBlurView.h */,
+				C6789CF11FC5541A003E8947 /* BeanBlurView.m */,
+			);
+			path = ResultPhase;
+			sourceTree = "<group>";
+		};
+		C62F59471FC6D1E200EC489B /* Phases */ = {
+			isa = PBXGroup;
+			children = (
+				C68123641FBC5A18002D6C23 /* BeanGamePhase.h */,
+				C68123651FBC5A18002D6C23 /* BeanGamePhase.m */,
+				C68123751FBC5E02002D6C23 /* BeanGamePhase+Private.h */,
+				C68123731FBC5AF5002D6C23 /* BeanGamePhase+SubClass.h */,
+				C68123671FBC5A2A002D6C23 /* BeanGamePhaseController.h */,
+				C68123681FBC5A2A002D6C23 /* BeanGamePhaseController.m */,
+				C62F59441FC6D15D00EC489B /* CountDownPhase */,
+				C62F59451FC6D16700EC489B /* PlayingPhase */,
+				C62F59461FC6D16C00EC489B /* ResultPhase */,
+			);
+			path = Phases;
+			sourceTree = "<group>";
+		};
+		C62F59481FC6D1FD00EC489B /* Tools */ = {
+			isa = PBXGroup;
+			children = (
+				C62F59411FC6C36A00EC489B /* BeanUIAdditions.h */,
+				C62F59421FC6C36A00EC489B /* BeanUIAdditions.m */,
+				C6269C541FC4821C00F7B27A /* BeanNoAnimationLayer.h */,
+				C6269C551FC4821C00F7B27A /* BeanNoAnimationLayer.m */,
+				C6269C511FC4757600F7B27A /* BeanAnimatedCountView.h */,
+				C6269C521FC4757600F7B27A /* BeanAnimatedCountView.m */,
+				C6789CEA1FC53087003E8947 /* BeanImageSequenceView.h */,
+				C6789CEB1FC53087003E8947 /* BeanImageSequenceView.m */,
+			);
+			path = Tools;
+			sourceTree = "<group>";
+		};
+		C62F59491FC6D21500EC489B /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				C62F59341FC6838300EC489B /* soundeffect_bg.mp3 */,
+				C62F59351FC6838400EC489B /* soundeffect_go.wav */,
+				C62F593F1FC68ABE00EC489B /* soundeffect_eat.m4a */,
+				C6ACA5EB1FB98FFF001D43A2 /* Main.storyboard */,
+				C6ACA5EE1FB98FFF001D43A2 /* Assets.xcassets */,
+				C6ACA5F01FB98FFF001D43A2 /* LaunchScreen.storyboard */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		C62F594A1FC6D22E00EC489B /* Game */ = {
+			isa = PBXGroup;
+			children = (
+				C62F59301FC6799600EC489B /* BeanGameSoundManager.h */,
+				C62F59311FC6799600EC489B /* BeanGameSoundManager.m */,
+				C622EB631FC4705900EA2EAC /* BeanGameResource.h */,
+				C622EB641FC4705900EA2EAC /* BeanGameResource.m */,
+				C6ACA5FB1FB991D7001D43A2 /* BeanGameController.h */,
+				C6ACA5FC1FB991D7001D43A2 /* BeanGameController.m */,
+				C681237B1FBDAAF5002D6C23 /* BeanGameDefines.h */,
+				C62F59481FC6D1FD00EC489B /* Tools */,
+				C62F59471FC6D1E200EC489B /* Phases */,
+			);
+			path = Game;
+			sourceTree = "<group>";
+		};
 		C6ACA5D91FB98FFE001D43A2 = {
 			isa = PBXGroup;
 			children = (
@@ -348,70 +461,13 @@
 		C6ACA5E41FB98FFE001D43A2 /* Beans */ = {
 			isa = PBXGroup;
 			children = (
+				C62F594A1FC6D22E00EC489B /* Game */,
+				C62F59491FC6D21500EC489B /* Resources */,
 				C6269C571FC4853B00F7B27A /* Vendors */,
 				C6ACA5E51FB98FFE001D43A2 /* AppDelegate.h */,
 				C6ACA5E61FB98FFE001D43A2 /* AppDelegate.m */,
 				C6ACA5E81FB98FFF001D43A2 /* ViewController.h */,
 				C6ACA5E91FB98FFF001D43A2 /* ViewController.m */,
-				C62F59411FC6C36A00EC489B /* BeanUIAdditions.h */,
-				C62F59421FC6C36A00EC489B /* BeanUIAdditions.m */,
-				C62F59301FC6799600EC489B /* BeanGameSoundManager.h */,
-				C62F59311FC6799600EC489B /* BeanGameSoundManager.m */,
-				C6269C541FC4821C00F7B27A /* BeanNoAnimationLayer.h */,
-				C6269C551FC4821C00F7B27A /* BeanNoAnimationLayer.m */,
-				C622EB631FC4705900EA2EAC /* BeanGameResource.h */,
-				C622EB641FC4705900EA2EAC /* BeanGameResource.m */,
-				C681237B1FBDAAF5002D6C23 /* BeanGameDefines.h */,
-				C6ACA5FB1FB991D7001D43A2 /* BeanGameController.h */,
-				C6ACA5FC1FB991D7001D43A2 /* BeanGameController.m */,
-				C68123641FBC5A18002D6C23 /* BeanGamePhase.h */,
-				C68123651FBC5A18002D6C23 /* BeanGamePhase.m */,
-				C68123751FBC5E02002D6C23 /* BeanGamePhase+Private.h */,
-				C68123731FBC5AF5002D6C23 /* BeanGamePhase+SubClass.h */,
-				C68123671FBC5A2A002D6C23 /* BeanGamePhaseController.h */,
-				C68123681FBC5A2A002D6C23 /* BeanGamePhaseController.m */,
-				C681236A1FBC5A3B002D6C23 /* BeanGameCountdownPhase.h */,
-				C681236B1FBC5A3B002D6C23 /* BeanGameCountdownPhase.m */,
-				C681236D1FBC5A4F002D6C23 /* BeanGamePlayingPhase.h */,
-				C681236E1FBC5A4F002D6C23 /* BeanGamePlayingPhase.m */,
-				C68123701FBC5A86002D6C23 /* BeanGameResultPhase.h */,
-				C68123711FBC5A86002D6C23 /* BeanGameResultPhase.m */,
-				C62F592A1FC571FD00EC489B /* BeanGameResultView.h */,
-				C62F592B1FC571FD00EC489B /* BeanGameResultView.m */,
-				C690D1F91FC5AB7A00BE9911 /* BeanGameProgressBar.h */,
-				C690D1FA1FC5AB7A00BE9911 /* BeanGameProgressBar.m */,
-				C6789CF01FC5541A003E8947 /* BeanBlurView.h */,
-				C6789CF11FC5541A003E8947 /* BeanBlurView.m */,
-				C66653C21FBC9F600009F30C /* BeansGenerator.h */,
-				C66653C31FBC9F600009F30C /* BeansGenerator.m */,
-				C6789CE61FC5272B003E8947 /* BeanGameScoreResolver.h */,
-				C6789CE71FC5272B003E8947 /* BeanGameScoreResolver.m */,
-				C6789CED1FC54A4A003E8947 /* BeanGameScoreHintView.h */,
-				C6789CEE1FC54A4A003E8947 /* BeanGameScoreHintView.m */,
-				C66653C51FBC9FC20009F30C /* BeanView.h */,
-				C66653C61FBC9FC20009F30C /* BeanView.m */,
-				C622EB601FC46FE800EA2EAC /* BeanScoreView.h */,
-				C622EB611FC46FE800EA2EAC /* BeanScoreView.m */,
-				C6269C511FC4757600F7B27A /* BeanAnimatedCountView.h */,
-				C6269C521FC4757600F7B27A /* BeanAnimatedCountView.m */,
-				C6789CEA1FC53087003E8947 /* BeanImageSequenceView.h */,
-				C6789CEB1FC53087003E8947 /* BeanImageSequenceView.m */,
-				C68123781FBDA264002D6C23 /* BeanLayerContainerView.h */,
-				C68123791FBDA264002D6C23 /* BeanLayerContainerView.m */,
-				C68123761FBD4AF2002D6C23 /* BeanView+Private.h */,
-				C66653D11FBCA7720009F30C /* BeanView+SubClass.h */,
-				C66653C81FBCA14C0009F30C /* BeanNormalBeanView.h */,
-				C66653C91FBCA14C0009F30C /* BeanNormalBeanView.m */,
-				C66653CB1FBCA1580009F30C /* BeanLargeBeanView.h */,
-				C66653CC1FBCA1580009F30C /* BeanLargeBeanView.m */,
-				C66653CE1FBCA1870009F30C /* BeanPooPooView.h */,
-				C66653CF1FBCA1870009F30C /* BeanPooPooView.m */,
-				C62F59341FC6838300EC489B /* soundeffect_bg.mp3 */,
-				C62F59351FC6838400EC489B /* soundeffect_go.wav */,
-				C62F593F1FC68ABE00EC489B /* soundeffect_eat.m4a */,
-				C6ACA5EB1FB98FFF001D43A2 /* Main.storyboard */,
-				C6ACA5EE1FB98FFF001D43A2 /* Assets.xcassets */,
-				C6ACA5F01FB98FFF001D43A2 /* LaunchScreen.storyboard */,
 				C6ACA5F31FB98FFF001D43A2 /* Info.plist */,
 				C6ACA5F41FB98FFF001D43A2 /* main.m */,
 			);
