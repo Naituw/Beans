@@ -84,9 +84,13 @@
 
 - (void)start
 {
-    ARFaceTrackingConfiguration * config = [[ARFaceTrackingConfiguration alloc] init];
-    config.lightEstimationEnabled = NO;
-    [_session runWithConfiguration:config];
+    if (@available(iOS 11.0, *)) {
+        ARFaceTrackingConfiguration * config = [[ARFaceTrackingConfiguration alloc] init];
+        config.lightEstimationEnabled = NO;
+        [_session runWithConfiguration:config];
+    } else {
+        // Fallback on earlier versions
+    }
     
     NSMutableArray<BeanGamePhase *> * phases = [NSMutableArray array];
     

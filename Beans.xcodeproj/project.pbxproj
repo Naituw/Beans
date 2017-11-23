@@ -48,6 +48,7 @@
 		C62F59371FC6838400EC489B /* soundeffect_bg.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = C62F59341FC6838300EC489B /* soundeffect_bg.mp3 */; };
 		C62F59381FC6838400EC489B /* soundeffect_go.wav in Resources */ = {isa = PBXBuildFile; fileRef = C62F59351FC6838400EC489B /* soundeffect_go.wav */; };
 		C62F59401FC68ABF00EC489B /* soundeffect_eat.m4a in Resources */ = {isa = PBXBuildFile; fileRef = C62F593F1FC68ABE00EC489B /* soundeffect_eat.m4a */; };
+		C62F59431FC6C36A00EC489B /* BeanUIAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = C62F59421FC6C36A00EC489B /* BeanUIAdditions.m */; };
 		C66653C41FBC9F600009F30C /* BeansGenerator.m in Sources */ = {isa = PBXBuildFile; fileRef = C66653C31FBC9F600009F30C /* BeansGenerator.m */; };
 		C66653C71FBC9FC20009F30C /* BeanView.m in Sources */ = {isa = PBXBuildFile; fileRef = C66653C61FBC9FC20009F30C /* BeanView.m */; };
 		C66653CA1FBCA14C0009F30C /* BeanNormalBeanView.m in Sources */ = {isa = PBXBuildFile; fileRef = C66653C91FBCA14C0009F30C /* BeanNormalBeanView.m */; };
@@ -161,6 +162,8 @@
 		C62F59341FC6838300EC489B /* soundeffect_bg.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = soundeffect_bg.mp3; sourceTree = "<group>"; };
 		C62F59351FC6838400EC489B /* soundeffect_go.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = soundeffect_go.wav; sourceTree = "<group>"; };
 		C62F593F1FC68ABE00EC489B /* soundeffect_eat.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = soundeffect_eat.m4a; sourceTree = "<group>"; };
+		C62F59411FC6C36A00EC489B /* BeanUIAdditions.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BeanUIAdditions.h; sourceTree = "<group>"; };
+		C62F59421FC6C36A00EC489B /* BeanUIAdditions.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BeanUIAdditions.m; sourceTree = "<group>"; };
 		C66653C21FBC9F600009F30C /* BeansGenerator.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BeansGenerator.h; sourceTree = "<group>"; };
 		C66653C31FBC9F600009F30C /* BeansGenerator.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BeansGenerator.m; sourceTree = "<group>"; };
 		C66653C51FBC9FC20009F30C /* BeanView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BeanView.h; sourceTree = "<group>"; };
@@ -350,6 +353,8 @@
 				C6ACA5E61FB98FFE001D43A2 /* AppDelegate.m */,
 				C6ACA5E81FB98FFF001D43A2 /* ViewController.h */,
 				C6ACA5E91FB98FFF001D43A2 /* ViewController.m */,
+				C62F59411FC6C36A00EC489B /* BeanUIAdditions.h */,
+				C62F59421FC6C36A00EC489B /* BeanUIAdditions.m */,
 				C62F59301FC6799600EC489B /* BeanGameSoundManager.h */,
 				C62F59311FC6799600EC489B /* BeanGameSoundManager.m */,
 				C6269C541FC4821C00F7B27A /* BeanNoAnimationLayer.h */,
@@ -527,6 +532,7 @@
 				C6ACA5FD1FB991D7001D43A2 /* BeanGameController.m in Sources */,
 				C681236F1FBC5A4F002D6C23 /* BeanGamePlayingPhase.m in Sources */,
 				C6269C9C1FC4859F00F7B27A /* _FBTweakColorViewControllerRGBDataSource.m in Sources */,
+				C62F59431FC6C36A00EC489B /* BeanUIAdditions.m in Sources */,
 				C6269C881FC4859F00F7B27A /* _FBTweakDictionaryViewController.m in Sources */,
 				C6269C9A1FC4859F00F7B27A /* _FBTweakColorViewControllerHSBDataSource.m in Sources */,
 				C6269C961FC4859F00F7B27A /* FBTweak.m in Sources */,
@@ -678,12 +684,16 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = DMJXDB9H6Q;
 				INFOPLIST_FILE = Beans/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.wutian.Beans;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -692,12 +702,15 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = DMJXDB9H6Q;
 				INFOPLIST_FILE = Beans/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.wutian.Beans;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;

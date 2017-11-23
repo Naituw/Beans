@@ -68,6 +68,7 @@
 {
     if (!_beanIconView) {
         _beanIconView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"orange_normal"]];
+        _beanIconView.wbtSize = CGSizeMake(34, 34);
     }
     return _beanIconView;
 }

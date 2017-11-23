@@ -12,12 +12,16 @@
 #import "FBTweakViewController.h"
 #import "FBTweakInline.h"
 #import "EXTScope.h"
+#import "BeanUIAdditions.h"
 
 @interface ViewController () <FBTweakViewControllerDelegate>
 
 @property (nonatomic, strong) ARSCNView * scnView;
-@property (nonatomic, strong) BeanGameController * gameController;
+
 @property (nonatomic, strong) UIView * contentView;
+@property (nonatomic, strong) UIView * interfaceView;
+@property (nonatomic, strong) BeanGameController * gameController;
+
 @property (nonatomic, strong) UIButton * tweakButton;
 
 @end
@@ -71,7 +75,7 @@
     
     _scnView.frame = self.view.bounds;
     _contentView.frame = self.view.bounds;
-    _tweakButton.frame = CGRectMake(10, self.view.safeAreaInsets.top + 10, 40, 40);
+    _tweakButton.frame = CGRectMake(0, MAX(BeanScreenSafeAreaInsets().top, 22) + 0, 60, 60);
 }
 
 - (void)tweakButtonPressed:(id)sender

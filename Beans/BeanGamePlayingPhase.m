@@ -21,6 +21,7 @@
 #import "BeanGameSoundManager.h"
 #import "EXTScope.h"
 #import "UIView+WBTSizes.h"
+#import "BeanUIAdditions.h"
 
 @interface BeanGamePlayingPhase ()
 
@@ -86,10 +87,10 @@
 - (void)layout
 {
     _scoreView.wbtRight = self.contentView.wbtWidth - 15;
-    _scoreView.wbtTop = 10 + self.contentView.safeAreaInsets.top;
+    _scoreView.wbtTop = 10 + MAX(BeanScreenSafeAreaInsets().top, 22);
     
     CGFloat height = 8;
-    _progressBar.frame = CGRectMake(10, self.contentView.wbtHeight - height - MAX(self.contentView.safeAreaInsets.bottom, 16), self.contentView.wbtWidth - 10 * 2, height);
+    _progressBar.frame = CGRectMake(10, self.contentView.wbtHeight - height - MAX(BeanScreenSafeAreaInsets().bottom, 16), self.contentView.wbtWidth - 10 * 2, height);
 }
 
 - (void)_runPhase
