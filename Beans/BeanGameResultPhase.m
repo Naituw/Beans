@@ -40,14 +40,17 @@
     
     [UIView animateWithDuration:1.5 delay:0.0 options:UIViewAnimationOptionAllowUserInteraction animations:^{
         
-//        UIBlurEffect * effect = [UIBlurEffect effectWithStyle:UIBlurEffectStyleDark];
-        
+        UIBlurEffect * effect = nil;
+        if (@available(iOS 10.0, *)) {
 #warning Private API here!
-        UIBlurEffect * effect = [NSClassFromString(@"_UICustomBlurEffect") effectWithStyle:UIBlurEffectStyleLight];
-        [effect setValue:[UIColor colorWithWhite:0.0 alpha:0.1] forKey:@"colorTint"];
-        [effect setValue:@(0.0) forKey:@"colorTintAlpha"];
-        [effect setValue:@(0.0) forKey:@"grayscaleTintAlpha"];
-        [effect setValue:@(16) forKey:@"blurRadius"];
+            effect = [NSClassFromString(@"_UICustomBlurEffect") effectWithStyle:UIBlurEffectStyleLight];
+            [effect setValue:[UIColor colorWithWhite:0.0 alpha:0.1] forKey:@"colorTint"];
+            [effect setValue:@(0.0) forKey:@"colorTintAlpha"];
+            [effect setValue:@(0.0) forKey:@"grayscaleTintAlpha"];
+            [effect setValue:@(16) forKey:@"blurRadius"];
+        } else {
+            effect = [UIBlurEffect effectWithStyle:UIBlurEffectStyleLight];
+        }
         
         _blurView.effect = effect;
     } completion:NULL];
