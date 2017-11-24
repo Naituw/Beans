@@ -76,9 +76,6 @@ static NSInteger BeanGamePhaseControllerRunningCount;
     self.running = NO;
 
     [_phasesToRun.firstObject stop];
-    if (_phasesToRun.count > 1) {
-        [self _gameDidFinish];
-    }
 }
 
 - (void)_gameWillStart
@@ -105,11 +102,7 @@ static NSInteger BeanGamePhaseControllerRunningCount;
 {
     [_phasesToRun removeObjectAtIndex:0];
     
-    if (!_running) {
-        return;
-    }
-    
-    if (_phasesToRun.count) {
+    if (_phasesToRun.count && _running) {
         [self _runNextPhase];
     } else {
         [self _gameDidFinish];

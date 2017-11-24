@@ -87,7 +87,7 @@
     if (_generating) {
         if (_nextBeanTime <= currentTime) {
             [self _createBean];
-            if ((arc4random() % 10) > 5) {
+            if ((arc4random() % 1000) < (BeanGameBeanChancesTwoBeanInARow * 1000)) {
                 // chances to genrate two
                 [self _createBean];
             }
@@ -250,13 +250,16 @@
     double accRatePerSec = BeanGameBeanAccelerationRate;
     CFTimeInterval now = CFAbsoluteTimeGetCurrent();
     
+    CFTimeInterval overallEplashed = now - _startTime;
+    double overallVelocity = overallEplashed * BeanGameBeanOverallAccelerationRate;
+    
     [CATransaction begin];
     for (BeanView * beanView in _currentBeanViews) {
         CFTimeInterval t = beanView.timestamp;
         CFTimeInterval eplashed = now - t;
         beanView.velocity += eplashed * accRatePerSec;
         CGRect frame = beanView.frame;
-        frame.origin.y += beanView.velocity * eplashed;
+        frame.origin.y += (beanView.velocity + overallVelocity) * eplashed;
         beanView.frame = frame;
         beanView.timestamp = now;
     }

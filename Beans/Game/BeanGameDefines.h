@@ -13,9 +13,11 @@
 
 #define BeanGameBeanRadiusExtend 5.0
 
-#define BeanGameBeanAccelerationRate FBTweakValue(@"豆子发生器", @"豆子发生器", @"加速度", 110.0)
-#define BeanGameBeanMinBeansPerSecond FBTweakValue(@"豆子发生器", @"豆子发生器", @"最少豆子/秒", 2)
-#define BeanGameBeanMaxBeansPerSecond FBTweakValue(@"豆子发生器", @"豆子发生器", @"最多豆子/秒", 4)
+#define BeanGameBeanAccelerationRate FBTweakValue(@"豆子发生器", @"豆子发生器", @"单个豆子加速度", 110.0)
+#define BeanGameBeanOverallAccelerationRate FBTweakValue(@"豆子发生器", @"豆子发生器", @"全局加速度", 12.0)
+#define BeanGameBeanChancesTwoBeanInARow FBTweakValue(@"豆子发生器", @"豆子发生器", @"同时出现两个豆子概率", 0.1, 0.0, 1.0)
+#define BeanGameBeanMinBeansPerSecond FBTweakValue(@"豆子发生器", @"豆子发生器", @"最少豆子/秒", 1.5)
+#define BeanGameBeanMaxBeansPerSecond FBTweakValue(@"豆子发生器", @"豆子发生器", @"最多豆子/秒", 4.5)
 #define BeanGameBeanGeneratorSpeedUpDuration FBTweakValue(@"豆子发生器", @"豆子发生器", @"数量加速时长", 8)
 #define BeanGameBeanNumberOfReferenceBeansToPreventOverlay FBTweakValue(@"豆子发生器", @"豆子发生器", @"防重叠参考个数", 3, 0, 4)
 
@@ -34,8 +36,10 @@
 
 #define BeanGameDuration FBTweakValue(@"游戏", @"游戏", @"游戏时长", 12.0)
 #define BeanGameTouchEnabled FBTweakValue(@"游戏", @"游戏", @"通过点击吃豆", YES)
+#define BeanGameBackgroundMusicAfterGo FBTweakValue(@"游戏", @"游戏", @"倒计时结束播音乐", YES)
 
 #define BeanGameBeanComboInterval FBTweakValue(@"游戏", @"连击", @"连击最大间隔", 1.0)
+#define BeanGameBeanGreatMinScore FBTweakValue(@"游戏", @"连击", @"Great! 最低分数", 101)
 
 #define BeanGameCountDownPhaseEnabled FBTweakValue(@"游戏", @"场景", @"#1 倒计时", YES)
 #define BeanGamePlayingPhaseEnabled FBTweakValue(@"游戏", @"场景", @"#2 吃豆子", YES)

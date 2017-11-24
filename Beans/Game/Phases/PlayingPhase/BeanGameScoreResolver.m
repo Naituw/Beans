@@ -40,15 +40,17 @@
         [self _playMissWithScore:score];
     } else {
         CFTimeInterval now = CFAbsoluteTimeGetCurrent();
-        if (_combo == 0 || (now - _previousAppendTime) > BeanGameBeanComboInterval) {
+        if ((now - _previousAppendTime) > BeanGameBeanComboInterval) {
             _combo = 1;
-            _score += score;
-            _previousAppendTime = now;
-            [self _playGreat];
         } else {
             _combo++;
-            _score += (score * _combo);
-            _previousAppendTime = now;
+        }
+        _score += (score * _combo);
+        _previousAppendTime = now;
+        
+        if (score >= BeanGameBeanGreatMinScore) {
+            [self _playGreat];
+        } else {
             [self _playCombo];
         }
     }

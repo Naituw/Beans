@@ -41,9 +41,19 @@
     return color;
 }
 
++ (NSString *)colorWithCombo:(NSInteger)combo
+{
+    switch (combo) {
+        case 1: return @"blue";
+        case 2: return @"green";
+        case 3: return @"yellow";
+        default: return @"red";
+    }
+}
+
 + (instancetype)hintViewWithCombo:(NSInteger)combo
 {
-    return [[self alloc] initWithContent:[NSString stringWithFormat:@"cx%zd", combo] color:[self nextColor]];
+    return [[self alloc] initWithContent:[NSString stringWithFormat:@"cx%zd", combo] color:[self colorWithCombo:combo]];
 }
 
 + (instancetype)hintViewWithMiss:(NSInteger)score

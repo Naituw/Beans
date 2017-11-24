@@ -35,10 +35,16 @@
 @property (nonatomic, assign) NSInteger score;
 @property (nonatomic, strong) UITapGestureRecognizer * simulatorTapGesture;
 @property (nonatomic, strong) BeanGameProgressBar * progressBar;
+@property (nonatomic, assign) BOOL playingBackgroundMusic;
 
 @end
 
 @implementation BeanGamePlayingPhase
+
+- (void)dealloc
+{
+    self.playingBackgroundMusic = NO;
+}
 
 - (instancetype)init
 {
@@ -53,6 +59,18 @@
         _score = score;
         
         _scoreView.score = score;
+    }
+}
+
+- (void)setPlayingBackgroundMusic:(BOOL)playingBackgroundMusic
+{
+    if (_playingBackgroundMusic != playingBackgroundMusic) {
+        _playingBackgroundMusic = playingBackgroundMusic;
+        if (playingBackgroundMusic) {
+            [[BeanGameSoundManager sharedManager] beginBackgroundMusicPlayback];
+        } else {
+            [[BeanGameSoundManager sharedManager] endBackgroundMusicPlayback];
+        }
     }
 }
 
@@ -76,12 +94,14 @@
     
     [self layout];
     
-    [[BeanGameSoundManager sharedManager] beginBackgroundMusicPlayback];
+    if (!BeanGameBackgroundMusicAfterGo) {
+        self.playingBackgroundMusic = YES;
+    }
 }
 
 - (void)_gameDidFinish
 {
-    [[BeanGameSoundManager sharedManager] endBackgroundMusicPlayback];
+    self.playingBackgroundMusic = NO;
 }
 
 - (void)layout
@@ -96,6 +116,8 @@
 - (void)_runPhase
 {
     NSLog(@"Start Playing");
+    
+    self.playingBackgroundMusic = YES;
     
     [[BeanGameSoundManager sharedManager] playGo];
     
@@ -113,6 +135,32 @@
     
     CGFloat distance = self.contentView.wbtHeight + BeanGameBeanLargeSize;
     NSTimeInterval timeFromTopToBottom = sqrt(2 * distance / BeanGameBeanAccelerationRate);
+
+    {
+        // oa : overall acc. rate
+        double oa = BeanGameBeanOverallAccelerationRate;
+        // a : bean acc. rate
+        double a = BeanGameBeanAccelerationRate;
+        // d : game duration
+        double d = BeanGameDuration;
+        // h : distance (view height + bean height)
+        double h = distance;
+        
+        // x: timeFromTopToBottom
+        // oa * (d - x) * x + 1/2 * (a + oa) * x * x = h
+        // 1/2 * (a - oa) * x * x + oa * d * x - h = 0
+        
+        // fa * x^2 + fb * x + c = 0
+        double fa = 1.0 / 2.0 * (a - oa);
+        double fb = oa * d;
+        double fc = -h;
+        
+        // quadratic equation
+        // x = 2 * fc / (-fb + sqrt(fb * fb - 4 * fa * fc))
+        double x1 = 2 * fc / (-fb + sqrt(fb * fb - 4 * fa * fc));
+        double x2 = 2 * fc / (-fb - sqrt(fb * fb - 4 * fa * fc));
+        timeFromTopToBottom = (x1 > 0) ? x1 : x2;
+    }
     
     @weakify(self);
     [_generator setUpdateBlock:^{
