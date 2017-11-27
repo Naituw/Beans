@@ -20,6 +20,7 @@
 
 @property (nonatomic, strong) BeanAnimatedCountView * animatedCountView;
 @property (nonatomic, strong) UIImageView * starView;
+@property (nonatomic, strong) UIImageView * backgroundView;
 
 @end
 
@@ -32,6 +33,7 @@
         _percentOfPeopleBelow = [self calculatePercentOfPeopleBelowScore:score];
         
         [self addSubview:self.starView];
+        [self addSubview:self.backgroundView];
         [self addSubview:self.animatedCountView];
         [self addSubview:self.label];
         
@@ -47,6 +49,14 @@
         _starView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"final_star"]];
     }
     return _starView;
+}
+
+- (UIImageView *)backgroundView
+{
+    if (!_backgroundView) {
+        _backgroundView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"soccer_bg"]];
+    }
+    return _backgroundView;
 }
 
 - (BeanAnimatedCountView *)animatedCountView
@@ -84,11 +94,14 @@
     [super layoutSubviews];
     
     CGPoint center = CGPointMake(self.wbtWidth / 2, self.wbtHeight / 2);
-    _animatedCountView.center = CGPointMake(center.x, center.y - 50);
-    _label.center = CGPointMake(center.x, center.y + 10);
     
-    _starView.wbtCenterX = _animatedCountView.wbtCenterX;
-    _starView.wbtBottom = _animatedCountView.wbtBottom - 10;
+    _backgroundView.center = center;
+    _starView.wbtCenterX = center.x;
+    _starView.wbtBottom = _backgroundView.wbtTop + 20;
+    
+    _animatedCountView.center = CGPointMake(center.x, center.y - 25);
+    _label.center = CGPointMake(center.x, center.y + 50);
+    
 }
 
 - (NSInteger)calculatePercentOfPeopleBelowScore:(NSInteger)score
