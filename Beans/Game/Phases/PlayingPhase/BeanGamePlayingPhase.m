@@ -99,11 +99,6 @@
     }
 }
 
-- (void)_gameDidFinish
-{
-    self.playingBackgroundMusic = NO;
-}
-
 - (void)layout
 {
     _scoreView.wbtRight = self.contentView.wbtWidth - 15;
@@ -180,6 +175,7 @@
         if (remainTime <= 0) {
             [self.progressBar setProgress:0.0];
             [gen stopUpdating];
+            [self setPlayingBackgroundMusic:NO];
             [self setState:BeanGamePhaseStateCompleted];
         } else {
             [self.progressBar setProgress:(remainTime / BeanGameDuration)];

@@ -241,7 +241,6 @@
         }
         [_previouslyCreatedBeans addObject:beanView];
     }
-    
     [beanView startRotationAnimation];
 }
 

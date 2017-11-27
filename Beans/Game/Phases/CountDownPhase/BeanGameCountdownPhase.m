@@ -49,6 +49,10 @@
         return;
     }
     
+    if (remain > 0) {
+        [[BeanGameSoundManager sharedManager] playCount];
+    }
+    
     UIImageView * imageView = [[UIImageView alloc] initWithImage:image];
     CGPoint center = self.contentView.center;
     imageView.transform = CGAffineTransformMakeScale(1.5, 1.5);

@@ -14,19 +14,19 @@
 #define BeanGameBeanRadiusExtend 5.0
 
 #define BeanGameBeanAccelerationRate FBTweakValue(@"豆子发生器", @"豆子发生器", @"单个豆子加速度", 110.0)
-#define BeanGameBeanOverallAccelerationRate FBTweakValue(@"豆子发生器", @"豆子发生器", @"全局加速度", 12.0)
-#define BeanGameBeanChancesTwoBeanInARow FBTweakValue(@"豆子发生器", @"豆子发生器", @"同时出现两个豆子概率", 0.1, 0.0, 1.0)
-#define BeanGameBeanMinBeansPerSecond FBTweakValue(@"豆子发生器", @"豆子发生器", @"最少豆子/秒", 1.5)
-#define BeanGameBeanMaxBeansPerSecond FBTweakValue(@"豆子发生器", @"豆子发生器", @"最多豆子/秒", 4.5)
+#define BeanGameBeanOverallAccelerationRate FBTweakValue(@"豆子发生器", @"豆子发生器", @"全局加速度", 9.0)
+#define BeanGameBeanChancesTwoBeanInARow FBTweakValue(@"豆子发生器", @"豆子发生器", @"同时出现两个豆子概率", 0.03, 0.0, 1.0)
+#define BeanGameBeanMinBeansPerSecond FBTweakValue(@"豆子发生器", @"豆子发生器", @"最少豆子/秒", 1.4)
+#define BeanGameBeanMaxBeansPerSecond FBTweakValue(@"豆子发生器", @"豆子发生器", @"最多豆子/秒", 2.7)
 #define BeanGameBeanGeneratorSpeedUpDuration FBTweakValue(@"豆子发生器", @"豆子发生器", @"数量加速时长", 8)
 #define BeanGameBeanNumberOfReferenceBeansToPreventOverlay FBTweakValue(@"豆子发生器", @"豆子发生器", @"防重叠参考个数", 3, 0, 4)
 
-#define BeanGameNormalBeanChance FBTweakValue(@"豆子", @"几率", @"普通豆几率", 8)
-#define BeanGameLargeBeanChance FBTweakValue(@"豆子", @"几率", @"巨型豆几率", 1)
-#define BeanGamePooChance FBTweakValue(@"豆子", @"几率", @"大便几率", 3)
+#define BeanGameNormalBeanChance FBTweakValue(@"豆子", @"几率", @"普通豆几率", 3)
+#define BeanGameLargeBeanChance FBTweakValue(@"豆子", @"几率", @"巨型豆几率", 0)
+#define BeanGamePooChance FBTweakValue(@"豆子", @"几率", @"大便几率", 1)
 
 #define BeanGameBeanNormalSize FBTweakValue(@"豆子", @"大小", @"普通豆大小", 68.0)
-#define BeanGameBeanLargeSize FBTweakValue(@"豆子", @"大小", @"巨型豆大小", 150.0)
+#define BeanGameBeanLargeSize FBTweakValue(@"豆子", @"大小", @"巨型豆大小", 170.0)
 #define BeanGameBeanPoopooSize FBTweakValue(@"豆子", @"大小", @"大便大小", 68.0)
 
 #define BeanGameNormalBeanScore FBTweakValue(@"豆子", @"得分", @"普通豆得分", 100)

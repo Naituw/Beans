@@ -9,9 +9,29 @@
 #import "BeanGameProgressBar.h"
 #import "UIView+WBTSizes.h"
 
+@interface BeanGameProgressBarFillView : UIView
+
+@property (nonatomic, readonly) CAGradientLayer * gradientLayer;
+
+@end
+
+@implementation BeanGameProgressBarFillView
+
++ (Class)layerClass
+{
+    return [CAGradientLayer class];
+}
+
+- (CAGradientLayer *)gradientLayer
+{
+    return (CAGradientLayer *)self.layer;
+}
+
+@end
+
 @interface BeanGameProgressBar ()
 
-@property (nonatomic, strong) UIView * fillView;
+@property (nonatomic, strong) BeanGameProgressBarFillView * fillView;
 
 @end
 
@@ -34,13 +54,22 @@
     
     self.layer.cornerRadius = frame.size.height / 2;
     _fillView.layer.cornerRadius = self.layer.cornerRadius;
+    
+    _fillView.bounds = self.bounds;
 }
 
 - (UIView *)fillView
 {
     if (!_fillView) {
-        _fillView = [[UIView alloc] initWithFrame:self.bounds];
+        _fillView = [[BeanGameProgressBarFillView alloc] initWithFrame:self.bounds];
         _fillView.backgroundColor = [UIColor colorWithRed:255.0/255 green:126.0/255 blue:70.0/255 alpha:1.0];
+        UIColor * leftColor = [UIColor colorWithRed:221.0/255 green:255.0/255 blue:83.0/255 alpha:1.0];
+        UIColor * rightColor = [UIColor colorWithRed:23.0/255 green:236.0/255 blue:255.0/255 alpha:1.0];
+        
+        CAGradientLayer * gradientLayer = _fillView.gradientLayer;
+        gradientLayer.colors = @[(id)leftColor.CGColor, (id)rightColor.CGColor];
+        gradientLayer.startPoint = CGPointMake(0, 0.5);
+        gradientLayer.endPoint = CGPointMake(1.0, 0.5);
     }
     return _fillView;
 }
@@ -58,7 +87,10 @@
 {
     [super layoutSubviews];
     
-    _fillView.frame = CGRectMake(0, 0, self.wbtWidth * _progress, self.wbtHeight);
+    CGRect frame = self.bounds;
+    frame.origin.x -= frame.size.width * (1 - _progress);
+    
+    _fillView.frame = frame;
 }
 
 @end

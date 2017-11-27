@@ -10,6 +10,7 @@
 #import "BeanGamePhase+SubClass.h"
 #import "BeanBlurView.h"
 #import "BeanGameResultView.h"
+#import "BeanGameSoundManager.h"
 
 @interface BeanGameResultPhase ()
 
@@ -30,6 +31,8 @@
 
     _resultView.transform = CGAffineTransformMakeScale(0.3, 0.3);
     _resultView.alpha = 0.0;
+    
+    [[BeanGameSoundManager sharedManager] playCheer];
         
     [UIView animateWithDuration:1.5 delay:0.0 usingSpringWithDamping:0.9 initialSpringVelocity:0.0 options:UIViewAnimationOptionAllowUserInteraction animations:^{
         _resultView.alpha = 1.0;

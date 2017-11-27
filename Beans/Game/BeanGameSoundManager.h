@@ -15,6 +15,8 @@
 - (void)beginBackgroundMusicPlayback;
 - (void)endBackgroundMusicPlayback;
 
+- (void)playCount;
+- (void)playCheer;
 - (void)playGo;
 - (void)playBite;
 
